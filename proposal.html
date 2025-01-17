@@ -1,63 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="author" content="your name">
-    <meta name="description" content="description of your page">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="your name" />
+    <meta name="description" content="description of your page" />
     <title>Course Planner</title>
-    <link rel="stylesheet" href="css/proposal.css">
-</head>
+    <link rel="stylesheet" href="css/proposal.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>INFO 340 Project: Topic Proposal </h1>
-        <p>Group members: James Chen, Cindy Xu, Nam Tran, Christian Kaylan Alviz</p>
+      <h1>INFO 340 Project: Topic Proposal</h1>
+      <p>
+        Group members: James Chen, Cindy Xu, Nam Tran, Christian Kaylan Alviz
+      </p>
     </header>
 
     <section>
-        <h2>Problem/Data Domain</h2>
-        <p>
-            Yoga teachers face challenges in organizing personalized and effective class plans for diverse student
-            needs. Managing class content, sequencing poses, and tracking plans can be time-consuming and error-prone.
-            Existing tools like basic spreadsheets or general note-taking apps lack tailored features for yoga class
-            planning. Dedicated apps for yoga planning, such as Tummee or Pocket Yoga, offer pre-defined sequences but
-            often lack customization, pose management, or integration with daily teaching schedules.
-
-            This lack of flexibility hinders teachers' ability to adapt plans to various yoga styles (e.g., Gentle,
-            Flow, Restorative) or skill levels. The gap presents an opportunity for a more interactive, user-friendly
-            tool designed specifically to address these unique needs. Our project proposes a Yoga Class Planner to
-            empower teachers by offering seamless class creation, pose management, and search capabilities.
-        </p>
-        <p>
-            Here are two example websites dealing with similar problem: <a href="https://www.tummee.com/?utm_source=google&utm_medium=cpc&utm_campaign=SnrcIVJ&utm_term=tummee&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9mLpHiETbUHbubWJhO-mqBhlemD_NxOe9jymOPo9kQ3-IhBCDJLDB4aArexEALw_wcB#tummee-tour-video" >Tummee</a>
-            and <a href="https://www.pocketyoga.com/apps/pocket-yoga/" >Pocket Yoga</a>
-        </p>
+      <h2>Problem/Data Domain</h2>
+      <p>
+        Yoga teachers face challenges in organizing personalized and effective
+        class plans for diverse student needs. Managing class content,
+        sequencing poses, and tracking plans can be time-consuming and
+        error-prone. Existing tools like basic spreadsheets or general
+        note-taking apps lack tailored features for yoga class planning.
+        Dedicated apps for yoga planning, such as Tummee or Pocket Yoga, offer
+        pre-defined sequences but often lack customization, pose management, or
+        integration with daily teaching schedules. This lack of flexibility
+        hinders teachers' ability to adapt plans to various yoga styles (e.g.,
+        Gentle, Flow, Restorative) or skill levels. The gap presents an
+        opportunity for a more interactive, user-friendly tool designed
+        specifically to address these unique needs. Our project proposes a Yoga
+        Class Planner to empower teachers with seamless class creation, pose
+        management, and reusability of history poses.
+      </p>
+      <p>
+        Here are two example websites dealing with similar problem:
+        <a
+          href="https://www.tummee.com/?utm_source=google&utm_medium=cpc&utm_campaign=SnrcIVJ&utm_term=tummee&gad_source=1&gclid=Cj0KCQiA-aK8BhCDARIsAL_-H9mLpHiETbUHbubWJhO-mqBhlemD_NxOe9jymOPo9kQ3-IhBCDJLDB4aArexEALw_wcB#tummee-tour-video"
+          >Tummee</a
+        >
+        and
+        <a href="https://www.pocketyoga.com/apps/pocket-yoga/">Pocket Yoga</a>
+      </p>
     </section>
 
     <section>
-        <h2>App Description</h2>
-        <p>
-            Our target audience would be yoga instructors that want a simple way plan classes.
-            Our core features that instructors will be able to use would be course management, class builder, and pose history.
-            The website will be able to create, delete, modify yoga courses. Set start time, name of yoga course, and duration. It will also have
-            a feature to allow instructors to input desired pose into the class, and the expected duration of each pose. The wesbite 
-            will also store their data/history for previous inputted yoga poses which allows them to select from their pose history to enter into the class builder. 
-            Instructors may also view all previously used poses.
-    
-        
-           <h3> Data and technology: </h3>
-            <p>
-            Reference Data: A CSV or API containing common yoga poses (with names, durations, and images).
-            Firebase: For persisting class plans and user data.
-            React Libraries: For drag-and-drop interactions and responsive design.
+      <h2>App Description</h2>
+      <p>
+        Our target audience would be yoga instructors that want a simple way
+        plan classes. Our core features that instructors will be able to use
+        would be course management, class builder, and pose history. The UW IMA
+        Yoga Teacher Training recommends using a yoga pose card deck to help
+        instructors design and schedule their classes. However, the current deck
+        includes only one card per pose, limiting its flexibility and making it
+        less reusable for varying class structures or repeated use in various
+        teaching scenarios. The website will be able to create, delete, modify
+        yoga courses. Set start time, name of yoga course, and duration. It will
+        also have a feature to allow instructors to input desired pose into the
+        class, and the expected duration of each pose. The wesbite will also
+        store their data/history for previous inputted yoga poses which allows
+        them to select from their pose history to enter into the class builder.
+        Instructors may also view all previously used poses.
+      </p>
 
-            By enabling easy class creation, pose organization, and reusable plans, this app reduces the administrative
-            burden for yoga teachers, allowing them to focus on teaching. Teachers gain a structured way to deliver
-            high-quality, customized experiences for their students, promoting better engagement and retention.
-        </p>
+      <h2>Data and technology</h2>
+      <p>
+        Reference Data: A CSV or API containing common yoga poses (with names,
+        durations, and images). Firebase: For persisting class plans and user
+        data. React Libraries: For drag-and-drop interactions and responsive
+        design. By enabling easy class creation, pose organization, and reusable
+        plans, this app reduces the administrative burden for yoga teachers,
+        allowing them to focus on teaching. Teachers gain a structured way to
+        deliver high-quality, customized experiences for their students,
+        promoting better engagement and retention.
+      </p>
     </section>
-
-</body>
-
+  </body>
 </html>
