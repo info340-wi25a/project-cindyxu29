@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="author" content="your name" />
-    <meta name="description" content="description of your page" />
+    <meta name="author" content="INFO 340 Group AB8" />
+    <meta name="description" content="A course planning platform for yoga teachers" />
     <title>Course Planner</title>
     <link rel="stylesheet" href="css/proposal.css" />
   </head>
@@ -19,20 +19,7 @@
     <section>
       <h2>Problem/Data Domain</h2>
       <p>
-        Yoga teachers face challenges in organizing personalized and effective
-        class plans for diverse student needs. Managing class content,
-        sequencing poses, and tracking plans can be time-consuming and
-        error-prone. Existing tools like basic spreadsheets or general
-        note-taking apps lack tailored features for yoga class planning.
-        Dedicated apps for yoga planning, such as Tummee or Pocket Yoga, offer
-        pre-defined sequences but often lack customization, pose management, or
-        integration with daily teaching schedules. This lack of flexibility
-        hinders teachers' ability to adapt plans to various yoga styles (e.g.,
-        Gentle, Flow, Restorative) or skill levels. The gap presents an
-        opportunity for a more interactive, user-friendly tool designed
-        specifically to address these unique needs. Our project proposes a Yoga
-        Class Planner to empower teachers with seamless class creation, pose
-        management, and reusability of history poses.
+        Yoga teachers face challenges in organizing personalized and effective class plans for diverse student needs. Managing class content, sequencing poses, and tracking plans can be time-consuming and error-prone. Existing tools like basic spreadsheets or general note-taking apps lack tailored features for yoga class planning. Dedicated apps for yoga planning, such as Tummee or Pocket Yoga, offer pre-defined sequences but often lack customization, pose management, or integration with daily teaching schedules. This lack of flexibility hinders teachers' ability to adapt plans to various yoga styles (e.g., Gentle, Flow, Restorative) or skill levels. The gap presents an opportunity for a more interactive, user-friendly tool designed specifically to address these unique needs. Our project proposes a Yoga Class Planner to empower teachers with seamless class creation, pose management, and reusability of history poses.
       </p>
       <p>
         Here are two example websites dealing with similar problem:
@@ -48,49 +35,29 @@
     <section>
       <h2>App Description</h2>
       <p>
-        Our target audience would be yoga instructors that want a simple way
-        plan classes. Our core features that instructors will be able to use
-        would be course management, class builder, and pose history. The UW IMA
-        Yoga Teacher Training recommends using a yoga pose card deck to help
-        instructors design and schedule their classes. However, the current deck
-        includes only one card per pose, limiting its flexibility and making it
-        less reusable for varying class structures or repeated use in various
-        teaching scenarios. The website will be able to create, delete, modify
-        yoga courses. Set start time, name of yoga course, and duration. It will
-        also have a feature to allow instructors to input desired pose into the
-        class, and the expected duration of each pose. The website will also
-        store their data/history for previous inputted yoga poses which allows
-        them to select from their pose history to enter into the class builder.
-        Instructors may also view all previously used poses.
-        </p>
+        Our target audience would be yoga instructors who want to have an easy and efficient course planning tool.
+      </p>
 
-        <p>
-        The data that the user will utilize will all be user input, as it will
-        allow flexibility regarding pose names and times, creating a planner 
-        that is both intuitive for the instructor to use, but also customizable, built
-        around the poses created/input by the instructor. The app will be easy 
-        to use, and accessible through easy to understand UI and a simple drag and drop
-        planner system for their course building. By enabling easy class creation,
-        pose organization, and reusable plans, this app reduces the administrative
-        burden for yoga teachers, allowing them to focus on teaching. Teachers gain
-        a structured way to deliver high-quality, customized experiences for their 
-        students, promoting better engagement and retention.
-        </p>
-        <h3>Core Features</h3>
+      <h3>Distinct Core Features</h3>
+      <ul>
+        <li>
+          1. Class Creation and Scheduling: Allow yoga teachers to create classes by inputing details such as class title, date, style (e.g., Gentle, Flow, Restorative), duration, student name, pose names. The created classes will appear in a calendar view where teachers can visualize and edit/delete their weekly or monthly schedule. Inside each class tab, teachers can upload names and images (optional) of poses and make them into an order.
+        </li>
+        <li>
+          2. Class Notes and Timer Integration: Provides an interface for teachers to add real-time class notes and integrate a timer to help manage session flow. How it works: Teachers can add quick notes about adjustments, feedback, or reminders while teaching (e.g., Modify Warrior II for beginners OR Students liked this flow). This page includes a simple timer feature where teachers can set timers for individual segments of the class (e.g., warm-up, main flow, cool down) and track time during the session. The timer is displayed alongside the class note-taking, helping teachers multitask within one web page. This feature combines real-time note-taking with time management, enhancing the teaching experience and making sessions more efficient.
+        </li>
+        <li>
+          3. Search for Student Profile: The system will automatically save a profile for each new student. Teachers can quickly search and check out what notes they previously left for a student, helping teachers to plan next lesson with personalized class-design.
+        </li>
+      </ul>
+
+      <h3>Data and technology</h3>
         <ul>
-          <li>Course Builder</li>
-          <li>Class Management</li>
-          <li>Pose History</li>
-        </ul>
-
-
-      <h2>Data and technology</h2>
-        <ul>
-          <li>Reference Data: A CSV or API containing common yoga poses (with names, durations, and images).</li>
+          <li>We will not be using API. It will be completely based on user input data.</li>
           <li>Firebase: For persisting class plans and user data.</li>
           <li>React Libraries: For drag-and-drop interactions and responsive design.</li>
         </ul>
-      </p>
+
     </section>
   </body>
 </html>

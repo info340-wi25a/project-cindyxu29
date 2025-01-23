@@ -13,3 +13,11 @@ h2, h1 {
     text-align: center;
     padding: 5px;
 }
+
+ul {
+    margin-bottom: 1.5rem; /* Space between unordered lists */
+}
+
+ul li {
+    margin-bottom: 1rem; /* Optional: Adds space between list items within a list */
+}
