@@ -192,7 +192,16 @@ font-weight: bold;
     margin-top: 30px;
 }
 
+.modal-body img {
+    /* object-fit: contain; */
+    max-height: 70vh;
+    width: 90%;
+}
 
+.calendar-background {
+    background-image: url(../img/ocean.jpg);
+    padding: 50px;
+}
   
 /* Media Query for Large Screens */
 @media (min-width: 768px) {
