@@ -154,13 +154,45 @@ nav {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .timer {
-    text-align: center;
-  }
+.timer {
+text-align: center;
+}
 
-  .video-container {
-    text-align: center;
-  }
+.video-container {
+text-align: center;
+}
+
+.splash {
+background-image: url(../img/mountain-splash.jpg);
+background-size: cover;
+background-position: center;
+display: flex;
+height: 80vh;
+width: 100%;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.splash-text{
+margin-bottom: 200px;
+color: white;
+padding: 50px;
+background-color: rgba(51, 50, 50, 0.7);
+border-radius: 25px;
+font-weight: bold;
+}
+
+.splash-text h2 {
+    font-size: 1.3em;
+    font-style:italic;
+}
+
+.splash-text button {
+    margin-top: 30px;
+}
+
+
   
 /* Media Query for Large Screens */
 @media (min-width: 768px) {
