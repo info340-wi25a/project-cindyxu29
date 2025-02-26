@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import "..style.css";
-
+import ClassButtons from './ClassButtons'
 
 function App() {
 
   return (
- 
+    <>
+        <h1>App is rendering now! </h1>
+        <ClassButtons />
+    </>
   )
 }
 
