@@ -2,8 +2,8 @@ import React from 'react';
 import ClassButtons from './ClassButtons';
 import PoseButtons from './PoseButtons';
 
-export default function Header({ page }) {
-    const pageType = page;
+export default function Header({ pageType }) {
+    // const pageType = page;
     let pageTitle = "";
     let RenderedButtons = null;
 

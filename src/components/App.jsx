@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-// import ClassButtons from './ClassButtons'
-// import PoseButtons from './PoseButtons';
-import { PosePage } from './PosePage.jsx';
+import PosePage from './PosePage';
 
 function App() {
 
   return (
     <>
-      <h1>App is rendering now! </h1>
+      <a>App is rendering now! </a>
       <PosePage />
     </>
   )

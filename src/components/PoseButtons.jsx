@@ -3,9 +3,7 @@ import React from 'react';
 export default function PoseButtons() {
   return (
     <>
-      <h1>INSIDE BUTTON</h1>
-      {/* <div>
-        <h1> inside the PoseButtons</h1>
+      <div>
         <button
           type="button"
           className="btn btn-dark"
@@ -118,7 +116,7 @@ export default function PoseButtons() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   )
 }
