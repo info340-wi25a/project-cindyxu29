@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import ClassPage from './ClassPage';
 import PosePage from './PosePage';
 import SAMPLE_POSES from '../data/poses.json'
+import Calendar from './Calendar'
 
 function App(props) {
 
@@ -21,6 +22,7 @@ function App(props) {
           <Route path="/my-classes" element={<ClassPage />} />
           <Route path="/pose" element={<PosePage poses={poses} />} />
           {/* You can add more routes here */}
+          <Route path="/calendar" element={<Calendar/>} />
         </Routes>
       </div>
     </div>

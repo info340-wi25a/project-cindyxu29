@@ -1,62 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router';
+
 
 export default function ClassButtons(props){
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
     return (
         <>
-        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal-addclass">
+        <Button variant="primary" onClick={handleShow}>
             Add Class
-        </button>
+        </Button>
+        <Link to="/calendar">
+            <Button variant="primary">Go to Calendar</Button>
+        </Link>
 
-        <a href="calendar.html" class="btn btn-dark">View Calendar</a>
 
-        {/* <!-- MODAL !--> */}
-        <div class="modal fade" id="modal-addclass" tabindex="-1" role="dialog" aria-labelledby="classModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel">Create a new Class!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        </button>
-                    </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="class-name" class="col-form-label">Class Name:</label>
-                            <input type="text" class="form-control" id="class-name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="duration" class="col-form-label">Duration:</label>
-                            <input type="text" class="form-control" id="duration-time"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="location" class="col-form-label">Location:</label>
-                            <input type="text" class="form-control" id="location-name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="date" class="col-form-label">Date:</label>
-                            <input type="text" class="form-control" id="date-s"/>
-                            {/* <!--made the name 'date-s' so that its easier to seperate label and id--> */}
-                        </div>
-                        <div class="form-group">
-                            <label for="time" class="col-form-label">Time:</label>
-                            <input type="text" class="form-control" id="time-s"/>
-                            {/* <!--made the name 'time-s' so that its easier to seperate label and id--> */}
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Notes:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add Class</button>
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
+        {/* REACT MODAL */}
+        <div style={{ display: 'block', position: 'initial' }}>
+        <Modal show={show} onHide={handleClose} centered="true">
+            <Modal.Header closeButton>
+                <Modal.Title>Create a new Class</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form>
+                    <Form.Group controlId="className">
+                        <Form.Label>Class Name:</Form.Label>
+                        <Form.Control />
+                    </Form.Group>
+                    <Form.Group controlId="duration">
+                        <Form.Label>Duration:</Form.Label>
+                        <Form.Control />
+                    </Form.Group>
+                    <Form.Group controlId="location">
+                        <Form.Label>Location:</Form.Label>
+                        <Form.Control />
+                    </Form.Group>
+                    <Form.Group controlId="date">
+                        <Form.Label>Date:</Form.Label>
+                        <Form.Control />
+                    </Form.Group>
+                    <Form.Group controlId="time">
+                        <Form.Label>Time:</Form.Label>
+                        <Form.Control />
+                    </Form.Group>
+                    <Form.Group controlId="notes">
+                        <Form.Label>Notes:</Form.Label>
+                        <Form.Control />
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Add Class
+          </Button>
+            </Modal.Footer>
+        </Modal>
         </div>
-    </div>
     </>
     )
 }
