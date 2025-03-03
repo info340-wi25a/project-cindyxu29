@@ -23,7 +23,7 @@ export default function ClassMain(props) {
 
   return (
     <div className="container">
-      <div className="d-flex justify-content-begin mb-3"> 
+      <div className="d-flex mb-3"> 
       <input type="text" onChange={handleChange} value={inputValue} placeholder="Search by name..." />
       </div>
         <div className="row">

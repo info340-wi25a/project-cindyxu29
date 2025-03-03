@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router'
+import Button from 'react-bootstrap/Button';
 
 export default function PoseButtons() {
   return (
@@ -12,10 +14,10 @@ export default function PoseButtons() {
         >
           Add Pose
         </button>
-        <a href="searchpose.html" className="btn btn-dark">
-          Search for Poses
-        </a>
-        <div
+        <Link to="/posesearch">
+            <Button variant="dark">Search for poses</Button>
+        </Link>
+          <div
           className="modal fade"
           id="modal-pose"
           tabIndex={-1}

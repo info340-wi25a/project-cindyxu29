@@ -13,11 +13,11 @@ export default function ClassButtons(props){
   
     return (
         <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="dark" onClick={handleShow}>
             Add Class
         </Button>
         <Link to="/calendar">
-            <Button variant="primary">Go to Calendar</Button>
+            <Button variant="dark">Go to Calendar</Button>
         </Link>
 
 
