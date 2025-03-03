@@ -28,8 +28,21 @@ body {
     left: 0;
     width: 100%;
     border-radius: 0 0 0.625rem 0.625rem;
-    z-index: 9999;
+    z-index: 999;
 }
+/* Modal */
+.modal-dialog {
+    z-index: 1050; /* Ensure the modal is above the navigation */
+}
+
+.modal {
+    z-index: 1051; /* Ensure modal is on top of the dialog */
+}
+
+.modal-backdrop {
+    z-index: 1040; /* Ensure the backdrop stays behind the modal */
+}
+
 
 .brand-name a {
     font-family: 'Oswald', sans-serif;
@@ -121,6 +134,7 @@ nav {
     border: none;
     padding: 0.625rem 1rem; 
     transition: background 0.3s;
+    margin-right: 1rem;
 }
 
 .btn-dark:hover {
