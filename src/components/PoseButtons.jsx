@@ -18,10 +18,7 @@ export default function PoseButtons(props) {
         <Button variant="dark">Search for poses</Button>
       </Link>
 
-      <div
-        className="modal show"
-        style={{ display: 'block', position: 'initial' }}
-      >
+      <div>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add a new Pose</Modal.Title>
