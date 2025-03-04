@@ -1,118 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router'
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
-export default function PoseButtons() {
+export default function PoseButtons(props) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
-      <div>
-        <button
-          type="button"
-          className="btn btn-dark"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-pose"
-        >
-          Add Pose
-        </button>
-        <Link to="/posesearch">
-          <Button variant="dark">Search for poses</Button>
-        </Link>
-        <div
-          className="modal fade"
-          id="modal-pose"
-          tabIndex={-1}
-          role="dialog"
-          aria-labelledby="poseModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog modal-dialog-centered" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="modalLabel">
-                  Add New Pose
-                </h5>
-              </div>
-              <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label htmlFor="class-name" className="col-form-label">
-                      Pose Name:
-                    </label>
-                    <input type="text" className="form-control" id="class-name" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="duration" className="col-form-label">
-                      Duration:
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="duration-time"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="difficulty" className="col-form-label">
-                      Difficulty:
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="difficulty-level"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="location" className="col-form-label">
-                      Script:
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="location-name"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="file-upload" className="col-form-label">
-                      Image:
-                    </label>
-                    <input
-                      type="file"
-                      className="form-control"
-                      id="file-upload"
-                      accept="image/*"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="message-text" className="col-form-label">
-                      Notes:
-                    </label>
-                    <textarea
-                      className="form-control"
-                      id="message-text"
-                      defaultValue={""}
-                    />
-                  </div>
-                </form>
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Add Pose
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Button variant="dark" onClick={handleShow}>
+        Add Pose
+      </Button>
+      <Link to="/posesearch">
+        <Button variant="dark">Search for poses</Button>
+      </Link>
+
+      <div
+        className="modal show"
+        style={{ display: 'block', position: 'initial' }}
+      >
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add a new Pose</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <PoseModalForm />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primay" onClick={handleClose}>
+              Add Pose
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </>
+  )
+}
+
+function PoseModalForm(props) {
+  return (
+    <Form>
+      <Form.Group controlId='poseName'>
+        <Form.Label>Pose Name</Form.Label>
+        <Form.Control type='text' placeholder='Tree Pose' />
+      </Form.Group>
+      <Form.Group controlId='duration'>
+        <Form.Label>Duration (min)</Form.Label>
+        <Form.Control type='text' placeholder='2' />
+      </Form.Group>
+      <Form.Group controlId='script'>
+        <Form.Label>Script</Form.Label>
+        <Form.Control type='text' placeholder='Inhale, lift your hands to the sky. Exhale, ground your feet to the earth' />
+      </Form.Group>
+    </Form>
   )
 }
