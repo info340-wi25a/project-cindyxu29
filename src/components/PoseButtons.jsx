@@ -15,9 +15,9 @@ export default function PoseButtons() {
           Add Pose
         </button>
         <Link to="/posesearch">
-            <Button variant="dark">Search for poses</Button>
+          <Button variant="dark">Search for poses</Button>
         </Link>
-          <div
+        <div
           className="modal fade"
           id="modal-pose"
           tabIndex={-1}
@@ -31,12 +31,6 @@ export default function PoseButtons() {
                 <h5 className="modal-title" id="modalLabel">
                   Add New Pose
                 </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
               </div>
               <div className="modal-body">
                 <form>
