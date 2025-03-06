@@ -75,7 +75,7 @@ nav {
   font-size: 1rem;
 }
 
-#hamburger-menu {
+.hamburger-menu {
   display: block;
   cursor: pointer;
   position: absolute;
@@ -216,9 +216,14 @@ nav {
   margin-top: 30px;
 }
 
-.calendar-background {
+/*.calendar-background {
   background-image: url(../img/ocean.jpg);
   padding: 50px;
+} */
+.weekly-title {
+  text-align: center;
+  margin-top: 4;
+  color: black;
 }
 
 /* Media Query for Large Screens */
