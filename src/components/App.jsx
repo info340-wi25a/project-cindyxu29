@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use BrowserRouter here
+import { BrowserRouter as Router, Routes, Route } from 'react-router'; // Use BrowserRouter here
 import { NavBar } from './NavBar';
 import HomePage from './HomePage';
 import ClassPage from './ClassPage';
@@ -24,8 +24,8 @@ function App(props) {
           <Route path="/my-classes" element={<ClassPage classes={SAMPLE_CLASSES} />} />
           <Route path="/pose" element={<PosePage poses={poses} />} />
           {/* You can add more routes here */}
-          <Route path="/calendar" element={<Calendar classes={SAMPLE_CLASSES}/>} />
-          <Route path="/posesearch" element={<Search poses={SAMPLE_POSES}/>}/>
+          <Route path="/calendar" element={<Calendar classes={SAMPLE_CLASSES} />} />
+          <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />
         </Routes>
       </div>
     </div>
