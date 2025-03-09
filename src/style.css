@@ -84,7 +84,7 @@ nav {
   right: 2rem;
 }
 
-#hamburger-menu a i {
+.hamburger-menu a i {
   color: black;
 }
 
@@ -232,7 +232,7 @@ nav {
     padding-top: 5.625rem;
   }
 
-  #hamburger-menu {
+  .hamburger-menu {
     display: none;
   }
 

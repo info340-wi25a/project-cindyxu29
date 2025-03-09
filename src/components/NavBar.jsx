@@ -7,7 +7,7 @@ export function NavBar() {
             <div className="brand-name">
                 <NavLink to="/">YogaEase</NavLink>
             </div>
-            <div id="hamburger-menu">
+            <div className="hamburger-menu">
                 <a href="#">
                     <i className="fa fa-bars" aria-label="menu"></i>
                 </a>
