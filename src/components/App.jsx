@@ -5,10 +5,11 @@ import { NavBar } from './NavBar';
 import HomePage from './HomePage';
 import ClassPage from './ClassPage';
 import PosePage from './PosePage';
-import SAMPLE_POSES from '../data/poses.json'
-import SAMPLE_CLASSES from '../data/classes.json'
-import Calendar from './Calendar'
-import Search from './Search'
+import SAMPLE_POSES from '../data/poses.json';
+import SAMPLE_CLASSES from '../data/classes.json';
+import Calendar from './Calendar';
+import Search from './Search';
+import Footer from './Footer';
 
 function App(props) {
 
@@ -28,6 +29,7 @@ function App(props) {
         <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />
       </Routes>
       {/* </div> */}
+      <Footer />
     </>
   )
 }

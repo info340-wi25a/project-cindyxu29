@@ -75,6 +75,12 @@ nav {
   font-size: 1rem;
 }
 
+.dropdown-item {
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
 .hamburger-menu {
   display: block;
   cursor: pointer;
@@ -212,8 +218,15 @@ nav {
   font-style: italic;
 }
 
-.splash-text button {
+.homepage-button {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.footer-container {
   margin-top: 30px;
+  display:flex;
+  justify-content: center;
 }
 
 /*.calendar-background {
