@@ -7,16 +7,18 @@ export default function ClassMain(props) {
   const classesArray = props.classes;
   const [inputValue, setInputValue] = useState('');
 
-  let handleChange = (event) => {
+  function handleChange(event) {
     let newValue = event.target.value
     setInputValue(newValue);
   }
 
-  const filteredClasses = classesArray.filter((currClass) => {
-    const currClassLowerCase = currClass.title.toLowerCase();
+  function filterClasses(classesArray, inputValue) {
     const inputValueLowerCase = inputValue.toLowerCase();
-    return currClassLowerCase.includes(inputValueLowerCase);
-  });
+    return classesArray.filter((currClass) => 
+      currClass.title.toLowerCase().includes(inputValueLowerCase)
+    );
+  }
+  const filteredClasses = filterClasses(classesArray, inputValue);
   console.log(filteredClasses);
 
 

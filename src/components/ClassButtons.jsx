@@ -8,8 +8,13 @@ import { Link } from 'react-router';
 export default function ClassButtons(props) {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  function handleClose() {
+    setShow(false);
+  }
+  
+  function handleShow() {
+    setShow(true);
+  }
 
   return (
     <>

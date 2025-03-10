@@ -11,16 +11,19 @@ export default function Search(props) {
 
   console.log('poses array: ' + posesList);
 
-  let handleChange = (event) => {
+  function handleChange(event) {
     let newValue = event.target.value
     setInputValue(newValue);
   }
 
-  const filteredPoses = posesList.filter((currPose) => {
-    const currPoseLowerCase = currPose.title.toLowerCase();
+  function filterPoses(posesList, inputValue) {
     const inputValueLowerCase = inputValue.toLowerCase();
-    return currPoseLowerCase.includes(inputValueLowerCase);
-  });
+    return posesList.filter((currPose) => 
+      currPose.title.toLowerCase().includes(inputValueLowerCase)
+    );
+  }
+  const filteredPoses = filterPoses(posesList, inputValue);
+  
 
 
   return (
