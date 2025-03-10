@@ -63,6 +63,12 @@ button:hover,
   z-index: 999;
 }
 
+/* .nav-logo {
+  width: 50px;
+  margin-bottom:15px;
+  margin-right: 10px
+} */
+
 .brand-name a {
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
@@ -137,6 +143,19 @@ nav {
   flex: 0 0 250px;
 }
 
+.class-container {
+  display:flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+
+.class-card {
+  width: 500px;
+  flex-grow: 1;
+  margin: 10px;
+}
+
 .pose {
   background-color: white;
   border-radius: 0.625rem;
@@ -155,6 +174,22 @@ nav {
   color: #333;
 }
 
+.class-button {
+  margin-right: 10px;
+}
+
+.search-input {
+  border-radius: 5px;
+  /* padding-top: 10px; */
+  margin-left: 10px;
+}
+
+.header-container {
+  color:black;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  margin-top: 20px;
+}
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

@@ -28,9 +28,9 @@ export default function ClassMain(props) {
   return (
     <div className="container">
       <div className="d-flex mb-3"> 
-        <input type="text" onChange={handleChange} value={inputValue} placeholder="Search by name..." />
+        <input type="text" className="search-input" onChange={handleChange} value={inputValue} placeholder="Search by name..." />
       </div>
-      <div className="row">
+      <div className="class-container">
         {renderClassCards(filteredClasses)}
       </div>
     </div>
@@ -41,16 +41,12 @@ export default function ClassMain(props) {
 function ClassCard(props) {
   const currClass = props.classObj
   return(
-    <div className="col-md-6 col-xl-3 d-flex">
-      <div className="card mb-4">
-        <div className="card-body">
-          <div className="col-sm">
-            <h2 className="card-title">{currClass.title}</h2>
-            <p>{currClass.duration} min | @{currClass.location} | {currClass.date} | {currClass.time} | {currClass.notes}</p>
-            <Link to="../pose" className="btn btn-dark">View Class</Link>
-          </div>
+    <div className="card class-card">
+      <div className="card-body">
+          <h2 className="card-title">{currClass.title}</h2>
+          <p>{currClass.duration} min | @{currClass.location} | {currClass.date} | {currClass.time} | {currClass.notes}</p>
+          <Link to="../pose" className="btn btn-dark">View Class</Link>
       </div>
-    </div>
   </div>
   )
 }

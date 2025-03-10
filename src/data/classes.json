@@ -30,5 +30,37 @@
         "date": "03/15/2025",
         "time": "6:00am",
         "notes": "Class for advanced students"
+    },
+    {
+        "title": "Gentle Yoga",
+        "duration": 30,
+        "location": "UW HUB",
+        "date": "03/10/2025",
+        "time": "2:00pm",
+        "notes": "Beginning lesson for UW students"
+    },
+    {
+        "title": "Flow Yoga",
+        "duration": 60,
+        "location": "IMA",
+        "date": "03/11/2025",
+        "time": "3:30pm",
+        "notes": "Weekly lesson for Yoga Beginner (not-limited to students)"
+    },
+    {
+        "title": "Restorative Yoga",
+        "duration": 75,
+        "location": "IMA",
+        "date": "03/13/2025",
+        "time": "10:00am",
+        "notes": "One-to-one class"
+    },
+    {
+        "title": "Advanced Yoga",
+        "duration": 60,
+        "location": "Yoga Studio",
+        "date": "03/15/2025",
+        "time": "6:00am",
+        "notes": "Class for advanced students"
     }
 ]

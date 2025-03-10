@@ -6,6 +6,8 @@ export function NavBar() {
     return (
             <nav className="nav-container">
                 <div className="brand-name">
+                    {/* Do we want logo here? */}
+                    {/* <img src="../../img/favicon.png" className="nav-logo"/> */}
                     <NavLink to="/">YogaEase</NavLink>
                 </div>
                 <div className="menu-links">

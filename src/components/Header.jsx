@@ -16,7 +16,7 @@ export default function Header({ pageType }) {
     }
 
     return (
-        <div className="text-black py-5 container-fluid">
+        <div className="header-container">
             <div className="container">
                 <h1>{pageTitle}</h1>
                 {<RenderedButtons />}
