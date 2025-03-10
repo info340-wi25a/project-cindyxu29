@@ -30,28 +30,28 @@ export default function ClassButtons(props) {
           <Modal.Body>
             <Form>
               <Form.Group controlId="className">
-                <Form.Label>Class Name:</Form.Label>
-                <Form.Control />
+                <Form.Label>Class Name</Form.Label>
+                <Form.Control type="text" placeholder="Gental Yoga" maxlength="50" required />
               </Form.Group>
               <Form.Group controlId="duration">
-                <Form.Label>Duration:</Form.Label>
-                <Form.Control />
+                <Form.Label>Duration (min)</Form.Label>
+                <Form.Control type="text" placeholder="2"  required />
               </Form.Group>
               <Form.Group controlId="location">
-                <Form.Label>Location:</Form.Label>
-                <Form.Control />
+                <Form.Label>Location</Form.Label>
+                <Form.Control type="text" placeholder="@UW IMA" required />
               </Form.Group>
               <Form.Group controlId="date">
-                <Form.Label>Date:</Form.Label>
-                <Form.Control />
+                <Form.Label>Date</Form.Label>
+                <Form.Control type="date" placeholder="mm/dd/yyyy" required />
               </Form.Group>
               <Form.Group controlId="time">
-                <Form.Label>Time:</Form.Label>
-                <Form.Control />
+                <Form.Label>Start Time</Form.Label>
+                <Form.Control type="time" placeholder="2:00pm" required />
               </Form.Group>
               <Form.Group controlId="notes">
-                <Form.Label>Notes:</Form.Label>
-                <Form.Control />
+                <Form.Label>Notes</Form.Label>
+                <Form.Control type="text" placeholder="Beginning lession for UW students" />
               </Form.Group>
             </Form>
           </Modal.Body>
