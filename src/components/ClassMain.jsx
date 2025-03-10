@@ -22,19 +22,19 @@ export default function ClassMain(props) {
   console.log(filteredClasses);
 
 
-
+  function renderClassCards(classes) {
+    return classes.map((currClass) => <ClassCard key={currClass.id} classObj={currClass} />);
+  }
   return (
     <div className="container">
       <div className="d-flex mb-3"> 
-      <input type="text" onChange={handleChange} value={inputValue} placeholder="Search by name..." />
+        <input type="text" onChange={handleChange} value={inputValue} placeholder="Search by name..." />
       </div>
-        <div className="row">
-          {filteredClasses.map((currClass) => (
-            <ClassCard classObj={currClass}/>
-          ))}
-        </div>
+      <div className="row">
+        {renderClassCards(filteredClasses)}
+      </div>
     </div>
-  )
+  );
 }
 
 

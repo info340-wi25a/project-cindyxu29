@@ -25,19 +25,19 @@ export default function Search(props) {
   const filteredPoses = filterPoses(posesList, inputValue);
   
 
-
+  function renderPoseCards(poses) {
+    return poses.map((currPose) => <PoseCard key={currPose.id} poseObj={currPose} />);
+  }
   return (
     <div className="container">
       <div className="d-flex mb-3">
         <input type="text" onChange={handleChange} value={inputValue} placeholder="Search by pose name..." />
       </div>
       <div className="row">
-        {filteredPoses.map((currPose) => (
-          <PoseCard poseObj={currPose} />
-        ))}
+        {renderPoseCards(filteredPoses)}
       </div>
     </div>
-  )
+  );
 }
 
 
