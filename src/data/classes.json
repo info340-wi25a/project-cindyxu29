@@ -1,66 +1,175 @@
 [
     {
+        "id": 1,
         "title": "Gentle Yoga",
         "duration": 30,
         "location": "UW HUB",
         "date": "03/10/2025",
         "time": "2:00pm",
-        "notes": "Beginning lesson for UW students"
+        "notes": "Beginning lesson for UW students",
+        "poses": [
+            {
+                "title": "Tree Pose 1",
+                "duration": "11",
+                "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
+            },
+            {
+                "title": "Tree Pose 2",
+                "duration": "11",
+                "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
+            },
+            {
+                "title": "Tree Pose 3",
+                "duration": "11",
+                "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
+            }
+        ]
     },
     {
+        "id": 2,
         "title": "Flow Yoga",
         "duration": 60,
         "location": "IMA",
         "date": "03/11/2025",
         "time": "3:30pm",
-        "notes": "Weekly lesson for Yoga Beginner (not-limited to students)"
+        "notes": "Weekly lesson for Yoga Beginner (not-limited to students)",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     },
     {
+        "id": 3,
         "title": "Restorative Yoga",
         "duration": 75,
         "location": "IMA",
         "date": "03/13/2025",
         "time": "10:00am",
-        "notes": "One-to-one class"
+        "notes": "One-to-one class",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     },
     {
+        "id": 4,
         "title": "Advanced Yoga",
         "duration": 60,
         "location": "Yoga Studio",
         "date": "03/15/2025",
         "time": "6:00am",
-        "notes": "Class for advanced students"
+        "notes": "Class for advanced students",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     },
     {
+        "id": 5,
         "title": "Gentle Yoga",
         "duration": 30,
         "location": "UW HUB",
         "date": "03/10/2025",
         "time": "2:00pm",
-        "notes": "Beginning lesson for UW students"
+        "notes": "Beginning lesson for UW students",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     },
     {
+        "id": 6,
         "title": "Flow Yoga",
         "duration": 60,
         "location": "IMA",
         "date": "03/11/2025",
         "time": "3:30pm",
-        "notes": "Weekly lesson for Yoga Beginner (not-limited to students)"
+        "notes": "Weekly lesson for Yoga Beginner (not-limited to students)",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     },
     {
+        "id": 7,
         "title": "Restorative Yoga",
         "duration": 75,
         "location": "IMA",
         "date": "03/13/2025",
         "time": "10:00am",
-        "notes": "One-to-one class"
+        "notes": "One-to-one class",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     },
     {
+        "id": 8,
         "title": "Advanced Yoga",
         "duration": 60,
         "location": "Yoga Studio",
         "date": "03/15/2025",
         "time": "6:00am",
-        "notes": "Class for advanced students"
+        "notes": "Class for advanced students",
+        "poses": [
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            },
+            {
+                "title": "Downward Dog Pose",
+                "duration": "11",
+                "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
+            }
+        ]
     }
 ]
