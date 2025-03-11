@@ -21,9 +21,6 @@ function PoseCard({ pose }) {
               arrow_downward</span>
           </Button>
           <Button href="#" className="btn btn-dark">
-            Edit
-          </Button>
-          <Button href="#" className="btn btn-dark">
             Delete
           </Button>
         </div>
