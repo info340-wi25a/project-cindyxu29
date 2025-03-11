@@ -7,8 +7,10 @@ export default function Calendar(props) {
 
     return (
         <main className="calendar-background">
-        <div className="container mt-4">
-            <h1 className="weekly-title">Your Weekly Schedule</h1>
+        {/* <div className="container mt-4"> */}
+        <h1 className="weekly-title">Your Weekly Schedule</h1>
+
+        <div className="calendar-container">        
             <div className="calendar">
                 <div className="day"><strong>Sunday</strong></div>
                 <div className="day"><strong>Monday</strong>
