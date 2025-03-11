@@ -18,7 +18,7 @@ export function NavBar() {
                     </ul>
                 </div>
 
-                <Dropdown className="hamburger-menu ">
+                <Dropdown className="hamburger-menu">
                     <Dropdown.Toggle variant="dark" id ="dropdown-basic">
                         Menu
                     </Dropdown.Toggle>
