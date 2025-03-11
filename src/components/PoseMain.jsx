@@ -42,7 +42,9 @@ export default function PoseMain({ poses }) {
           {poseCards}
         </div >
       </div >
-      <Timer />
+      <div className="timer-container">
+        <Timer/>
+      </div>
     </main>
   )
 }
