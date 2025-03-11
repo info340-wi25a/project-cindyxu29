@@ -17,20 +17,16 @@ function App(props) {
 
   return (
     <>
-      <NavBar /> {/* Always appears on top */}
-      {/* <div style={{ paddingTop: '60px' }}> Space for the fixed NavBar */}
+      <NavBar />
       <Routes>
-        {/* Default route for HomePage */}
-        <Route path="/" element={<HomePage />} /> {/* This will be the first page */}
+        <Route path="/" element={<HomePage />} />
         <Route path="/my-classes" element={<ClassPage classes={SAMPLE_CLASSES} />} />
         <Route path="/pose" element={<PosePage poses={poses} />} />
-        {/* You can add more routes here */}
         <Route path="/calendar" element={<Calendar classes={SAMPLE_CLASSES} />} />
         <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />
         {/* Catch-all route: redirect to the homepage when users try to input an incorrect link in the URL*/}
-        <Route path="*" element={<Navigate to="/" replace />} /> 
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      {/* </div> */}
       <Footer />
     </>
   )
