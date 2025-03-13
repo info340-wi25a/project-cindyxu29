@@ -2,10 +2,8 @@ import React from 'react';
 import { NavLink, Link } from 'react-router';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-
-export function NavBar() {
+export default function Header() {
     return (
-        
         <header className="header-container">
             <nav className="nav-container">
                 <div className="brand-name">

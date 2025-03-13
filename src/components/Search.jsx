@@ -31,7 +31,7 @@ export default function Search(props) {
   return (
     <div className="container">
       <div className="d-flex mb-3">
-        <input type="text" onChange={handleChange} value={inputValue} placeholder="Search by pose name..." />
+        <input type="text" className="search-input" onChange={handleChange} value={inputValue} placeholder="Search by pose name..." />
       </div>
       <div className="row">
         {renderPoseCards(filteredPoses)}

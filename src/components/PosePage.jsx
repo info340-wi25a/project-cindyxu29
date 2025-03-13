@@ -1,18 +1,25 @@
-import React from "react";
-import Header from './Header';
+import React, { useState } from "react";
 import PoseMain from './PoseMain'
 import { useParams } from "react-router";
 // import Header
+import PoseButtons from './PoseButtons';
 
-export default function PosePage({ classes }) {
+export default function PosePage({ classes, poses = [] }) {
   const { classId } = useParams();
-  // let poses = props.poses;
+  const [poseList, setPoses] = useState(poses);
+
+  function handleAddPose(newPose) {
+    setPoses((prevPoses) => [...prevPoses, newPose]); // Update state with new pose
+  }
+
   return (
     <>
-      <header>
-        <Header pageType='pose' />
-      </header>
       <main>
+        <div className="header">
+          <h1>Poses in This Class</h1>
+          <PoseButtons onAddPose={handleAddPose} />
+        </div>
+        <PoseMain poses={poseList} />
         <PoseMain classes={classes} classId={classId} />
       </main>
     </>

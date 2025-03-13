@@ -1,6 +1,7 @@
 import React from "react";
 import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
+import PoseButtons from './PoseButtons';
 
 function PoseCard({ pose }) {
   // let pose = props.pose;
