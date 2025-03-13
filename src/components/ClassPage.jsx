@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+// import Header from './Header';
 import ClassMain from './ClassMain';
 import ClassButtons from './ClassButtons';
+import { useParams } from "react-router";
+import { SAMPLE_CLASSES } from '../data/classes.json';
+// import Header
 
 export default function ClassPage(props) {
+  const { classId } = useParams();
+  const selectedClass = SAMPLE_CLASSES.find((c) => c.id === classId);
   const [classes, setClasses] = useState(props.classes || []);
 
   function handleAddClass(newClass) {

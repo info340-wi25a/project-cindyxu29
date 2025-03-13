@@ -57,11 +57,7 @@ export default function PoseButtons({ onAddPose }) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-<<<<<<< HEAD
-            <Button variant="primary" onClick={handleClose}>
-=======
             <Button variant="primary" onClick={handleSubmit}>
->>>>>>> 9dad9daca51dc4341b300cd464a2cc95defb6ac3
               Add Pose
             </Button>
           </Modal.Footer>
@@ -86,7 +82,7 @@ function PoseModalForm({ poseName, setPoseName, duration, setDuration, script, s
       </Form.Group>
       <Form.Group controlId='script'>
         <Form.Label>Script</Form.Label>
-        <Form.Control type='text' placeholder='Inhale, lift your hands to the sky. Exhale, ground your feet to the earth' 
+        <Form.Control type='text' placeholder='Inhale, lift your hands to the sky. Exhale, ground your feet to the earth'
           value={script}
           onChange={(e) => setScript(e.target.value)} />
       </Form.Group>
