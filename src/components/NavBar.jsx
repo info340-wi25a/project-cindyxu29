@@ -2,12 +2,13 @@ import React from 'react';
 import { NavLink, Link } from 'react-router';
 import Dropdown from 'react-bootstrap/Dropdown';
 
+
 export function NavBar() {
     return (
+        
+        <header className="header-container">
             <nav className="nav-container">
                 <div className="brand-name">
-                    {/* Do we want logo here? */}
-                    {/* <img src="../../img/favicon.png" className="nav-logo"/> */}
                     <NavLink to="/">YogaEase</NavLink>
                 </div>
                 <div className="menu-links">
@@ -34,9 +35,7 @@ export function NavBar() {
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-
             </nav>
-
-
+        </header>
     );
 }

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Header from './Header';
 import ClassMain from './ClassMain';
 import ClassButtons from './ClassButtons';
-// import Header
 
 export default function ClassPage(props) {
   const [classes, setClasses] = useState(props.classes || []);
@@ -13,11 +11,11 @@ export default function ClassPage(props) {
 
   return (
     <>
-      <header>
-        <Header pageType='class' />
-      </header>
       <main>
-        <ClassButtons onAddClass={handleAddClass} />
+        <div className="header">
+          <h1>Classes</h1>
+          <ClassButtons onAddClass={handleAddClass} />
+        </div>
         <ClassMain classes={classes} />
       </main>
     </>

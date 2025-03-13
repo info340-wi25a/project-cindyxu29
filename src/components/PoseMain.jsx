@@ -1,6 +1,7 @@
 import React from "react";
 import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
+import PoseButtons from './PoseButtons';
 
 function PoseCard({ pose }) {
   // let pose = props.pose;
@@ -29,11 +30,10 @@ function PoseCard({ pose }) {
   );
 }
 
-export default function PoseMain({ poses }) {
-  // let poses = props.poses;
-  let poseCards = poses.map((pose) => {
-    return < PoseCard key={pose.title} pose={pose} />;
-  })
+export default function PoseMain({ poses, onAddPose }) {
+  const poseCards = poses.map((pose) => {
+    return <PoseCard key={pose.title} pose={pose} />;
+  });
 
   return (
     <main>

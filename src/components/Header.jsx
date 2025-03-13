@@ -1,26 +1,41 @@
 import React from 'react';
-import ClassButtons from './ClassButtons';
-import PoseButtons from './PoseButtons';
+import { NavLink, Link } from 'react-router';
+import Dropdown from 'react-bootstrap/Dropdown';
 
-export default function Header({ pageType }) {
-    // const pageType = page;
-    let pageTitle = "";
-    let RenderedButtons = null;
-
-    if (pageType === "pose") {
-        pageTitle = "Poses in This Class"
-        RenderedButtons = PoseButtons;
-    } else if (pageType === "class") {
-        pageTitle = "Classes"
-        RenderedButtons = ClassButtons;
-    }
-
+export default function Header() {
     return (
-        <div className="header-container">
-            <div className="container">
-                <h1>{pageTitle}</h1>
-                {<RenderedButtons />}
-            </div>
-        </div>
-    )
+        <header className="header-container">
+            <nav className="nav-container">
+                <div className="brand-name">
+                    {/* Do we want logo here? */}
+                    {/* <img src="../../img/favicon.png" className="nav-logo"/> */}
+                    <NavLink to="/">YogaEase</NavLink>
+                </div>
+                <div className="menu-links">
+                    <ul>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/my-classes">My Classes</NavLink></li>
+                        <li><NavLink to="/login">Sign-in</NavLink></li>
+                    </ul>
+                </div>
+
+                <Dropdown className="hamburger-menu">
+                    <Dropdown.Toggle variant="dark" id ="dropdown-basic">
+                        Menu
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item as={Link} to="/">
+                            Home
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/my-classes">
+                            My Classes
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/login">
+                            Sign-in
+                        </Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </nav>
+        </header>
+    );
 }
