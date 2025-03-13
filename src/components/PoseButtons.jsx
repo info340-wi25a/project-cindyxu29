@@ -57,7 +57,7 @@ export default function PoseButtons({ onAddPose }) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primay" onClick={handleSubmit}>
+            <Button variant="primary" onClick={handleSubmit}>
               Add Pose
             </Button>
           </Modal.Footer>

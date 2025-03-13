@@ -9,6 +9,7 @@ export function NavBar() {
         <header className="header-container">
             <nav className="nav-container">
                 <div className="brand-name">
+                    <img src="../../img/favicon.png" alt="YogaEase Logo" className="nav-logo" />
                     <NavLink to="/">YogaEase</NavLink>
                 </div>
                 <div className="menu-links">

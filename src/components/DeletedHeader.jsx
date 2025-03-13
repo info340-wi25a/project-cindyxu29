@@ -7,8 +7,7 @@ export default function Header() {
         <header className="header-container">
             <nav className="nav-container">
                 <div className="brand-name">
-                    {/* Do we want logo here? */}
-                    {/* <img src="../../img/favicon.png" className="nav-logo"/> */}
+                    <img src="../../img/favicon.png" alt="YogaEase Logo" className="nav-logo" />
                     <NavLink to="/">YogaEase</NavLink>
                 </div>
                 <div className="menu-links">

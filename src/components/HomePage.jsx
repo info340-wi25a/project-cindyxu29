@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 function HomePage() {
   return (
     <main>
-      <div className="video-container splash">
-        <div className="splash-text">
+      <div className="splash" role="img" aria-label="A peaceful yoga practice" >
+        <div className="splash-text" >
           <h1>Welcome to YogaEase</h1>
           <h2>Structure Your Flow, Elevate Your Practice.</h2>
           {/* Link to navigate to Manage Classes page */}
