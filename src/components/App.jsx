@@ -21,7 +21,8 @@ function App(props) {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/my-classes" element={<ClassPage classes={SAMPLE_CLASSES} />} />
-        <Route path="/pose" element={<PosePage poses={poses} />} />
+        <Route path="/my-classes/:classId/poses" element={<PosePage classes={SAMPLE_CLASSES} />} />
+        {/* <Route path="/pose/:classId" element={<PosePage classes={SAMPLE_CLASSES} />} /> */}
         <Route path="/calendar" element={<Calendar classes={SAMPLE_CLASSES} />} />
         <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />
         {/* Catch-all route: redirect to the homepage when users try to input an incorrect link in the URL*/}

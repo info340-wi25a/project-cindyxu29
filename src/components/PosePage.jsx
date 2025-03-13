@@ -1,9 +1,11 @@
 import React from "react";
 import Header from './Header';
 import PoseMain from './PoseMain'
+import { useParams } from "react-router";
 // import Header
 
-export default function PosePage({ poses }) {
+export default function PosePage({ classes }) {
+  const { classId } = useParams();
   // let poses = props.poses;
   return (
     <>
@@ -11,7 +13,7 @@ export default function PosePage({ poses }) {
         <Header pageType='pose' />
       </header>
       <main>
-        <PoseMain poses={poses} />
+        <PoseMain classes={classes} classId={classId} />
       </main>
     </>
   )

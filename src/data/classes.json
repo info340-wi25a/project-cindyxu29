@@ -9,16 +9,19 @@
         "notes": "Beginning lesson for UW students",
         "poses": [
             {
+                "id": 1,
                 "title": "Tree Pose 1",
                 "duration": "11",
                 "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
             },
             {
+                "id": 2,
                 "title": "Tree Pose 2",
                 "duration": "11",
                 "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
             },
             {
+                "id": 3,
                 "title": "Tree Pose 3",
                 "duration": "11",
                 "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
@@ -35,11 +38,13 @@
         "notes": "Weekly lesson for Yoga Beginner (not-limited to students)",
         "poses": [
             {
+                "id": 4,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 5,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
@@ -56,11 +61,13 @@
         "notes": "One-to-one class",
         "poses": [
             {
+                "id": 6,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 7,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
@@ -77,11 +84,13 @@
         "notes": "Class for advanced students",
         "poses": [
             {
+                "id": 8,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 9,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
@@ -98,11 +107,13 @@
         "notes": "Beginning lesson for UW students",
         "poses": [
             {
+                "id": 10,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 11,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
@@ -119,11 +130,13 @@
         "notes": "Weekly lesson for Yoga Beginner (not-limited to students)",
         "poses": [
             {
+                "id": 12,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 13,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
@@ -140,11 +153,13 @@
         "notes": "One-to-one class",
         "poses": [
             {
+                "id": 14,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 15,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
@@ -161,11 +176,13 @@
         "notes": "Class for advanced students",
         "poses": [
             {
+                "id": 16,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
             },
             {
+                "id": 17,
                 "title": "Downward Dog Pose",
                 "duration": "11",
                 "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."

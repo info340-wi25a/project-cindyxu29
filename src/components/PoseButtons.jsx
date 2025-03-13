@@ -30,7 +30,7 @@ export default function PoseButtons(props) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primay" onClick={handleClose}>
+            <Button variant="primary" onClick={handleClose}>
               Add Pose
             </Button>
           </Modal.Footer>

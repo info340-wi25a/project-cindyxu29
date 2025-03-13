@@ -29,10 +29,14 @@ function PoseCard({ pose }) {
   );
 }
 
-export default function PoseMain({ poses }) {
+export default function PoseMain({ classes, classId }) {
   // let poses = props.poses;
-  let poseCards = poses.map((pose) => {
-    return < PoseCard key={pose.title} pose={pose} />;
+
+  const selectedClass = classes.find(({ id }) => id.toString() === classId.toString());
+  console.log(selectedClass)
+  let poseCards = selectedClass.poses.map((pose, index) => {
+    console.log(pose)
+    return < PoseCard key={index} pose={pose} />;
   })
 
   return (
@@ -43,7 +47,7 @@ export default function PoseMain({ poses }) {
         </div >
       </div >
       <div className="timer-container">
-        <Timer/>
+        <Timer />
       </div>
     </main>
   )
