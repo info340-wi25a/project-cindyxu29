@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ClassMain from './ClassMain';
 import ClassButtons from './ClassButtons';
 import { useParams } from "react-router";
-import { SAMPLE_CLASSES } from '../data/classes.json';
+import SAMPLE_CLASSES from '../data/classes.json';
 // import Header
 
 export default function ClassPage(props) {
