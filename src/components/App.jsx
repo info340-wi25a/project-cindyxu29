@@ -22,6 +22,7 @@ function App(props) {
 
   useEffect(() => {
     const auth = getAuth();
+    console.log("auth: " + auth);
     const db = getDatabase();
 
     const fetchUserClasses = (userId) => {
@@ -51,50 +52,13 @@ function App(props) {
     });
   }, []);
 
-  const testUser = {
-    userid: "RuNF2ZDSSmeyUSVGvRItdPgeKB43",
-    classes: {
-      class1: {
-        title: "Gentle Yoga",
-        duration: 30,
-        location: "UW HUB",
-        date: "03/10/2025",
-        time: "2:00pm",
-        notes: "Beginning lesson for UW students",
-        poses: {
-          pose1: {
-            title: "Tree Pose 1",
-            duration: "11",
-            script: "Inhale, lift your hands to the sky."
-          }
-        }
-      },
-      class2: {
-        title: "Flow Yoga",
-        duration: 60,
-        location: "IMA",
-        date: "03/14/2025",
-        time: "3:30pm",
-        notes: "Weekly lesson for Yoga Beginner",
-        poses: {
-          pose4: {
-            title: "Downward Dog Pose",
-            duration: "11",
-            script: "Starting on all fours."
-          }
-        }
-      }
-    }
-  };
-
-
   return (
     <>
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/my-classes" element={<ClassPage classes={ userClasses } />} />
-        <Route path="/my-classes/:classId/poses" element={<PosePage classes={ userClasses } />} />
+        <Route path="/my-classes" element={<ClassPage classes={ userClasses } user={currentUser} />} />
+        <Route path="/my-classes/:classId/poses" element={<PosePage classes={ SAMPLE_POSES } />} />
         {/* <Route path="/pose/:classId" element={<PosePage classes={SAMPLE_CLASSES} />} /> */}
         <Route path="/calendar" element={<Calendar classes={ userClasses } />} />
         <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />
