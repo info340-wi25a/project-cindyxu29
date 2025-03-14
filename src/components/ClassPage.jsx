@@ -7,9 +7,13 @@ import SAMPLE_CLASSES from '../data/classes.json';
 // import Header
 
 export default function ClassPage(props) {
+  const currClasses = props.classes;
+  console.log("currClasses: " + currClasses);
   const { classId } = useParams();
   const selectedClass = SAMPLE_CLASSES.find((c) => c.id === classId);
-  const [classes, setClasses] = useState(props.classes || []);
+  const [classes, setClasses] = useState(props.classes);
+  console.log("classPage prop: " + props.classes);
+  // console.log("classPage classes var: " + classes);
 
   function handleAddClass(newClass) {
     setClasses((prevClasses) => [...prevClasses, newClass]); // Update state with new class
@@ -22,7 +26,7 @@ export default function ClassPage(props) {
           <h1>Classes</h1>
           <ClassButtons onAddClass={handleAddClass} />
         </div>
-        <ClassMain classes={classes} />
+        <ClassMain classes={ classes } />
       </main>
     </>
   )

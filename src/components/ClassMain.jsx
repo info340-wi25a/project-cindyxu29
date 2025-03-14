@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 
 export default function ClassMain(props) {
   const classesArray = props.classes;
+  console.log("classesArray:" +  classesArray)
   const [inputValue, setInputValue] = useState('');
 
   function handleChange(event) {
