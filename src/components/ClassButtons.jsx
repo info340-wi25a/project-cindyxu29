@@ -3,6 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router';
+import { ref, push as firebasePush } from 'firebase/database';
+
 
 
 export default function ClassButtons({ onAddClass }) {
@@ -32,6 +34,22 @@ export default function ClassButtons({ onAddClass }) {
       time: time,
       notes: notes,
     };
+
+  // push new class to database
+  const addClass = () => {
+    const newClass = {
+      id: Date.now(),  // Unique ID
+      title: className,
+      duration: duration,
+      location: location,
+      date: date,
+      time: time,
+      notes: notes,
+    };
+    
+    const classesRef = ref(db, "users/-OLIU8bKC0RQGTjABKQr/classes");
+    firebasePush(classesRef, newClass);
+  }
 
     onAddClass(newClass); // Pass new class to parent
     handleClose(); // Close modal after submitting

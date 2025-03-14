@@ -26,6 +26,7 @@ export default function ClassMain(props) {
   function renderClassCards(classes) {
     return classes.map((currClass) => <ClassCard key={currClass.id} classObj={currClass} />);
   }
+
   return (
     <div className="container">
       <div className="d-flex mb-3">
