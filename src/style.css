@@ -64,11 +64,15 @@ button:hover,
 }
 
 .nav-logo {
-  width: 40px; /* Set the size of the icon */
-  height: 40px; /* Ensure the icon has the correct height */
-  margin-bottom:15px;
-  margin-right: 10px; /* Space between the icon and the text */
-  vertical-align: middle; /* Align the icon vertically with the text */
+  width: 40px;
+  /* Set the size of the icon */
+  height: 40px;
+  /* Ensure the icon has the correct height */
+  margin-bottom: 15px;
+  margin-right: 10px;
+  /* Space between the icon and the text */
+  vertical-align: middle;
+  /* Align the icon vertically with the text */
 }
 
 .brand-name a {
@@ -199,11 +203,7 @@ nav {
 }
 
 
-.calendar {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+
 
 .day {
   border: 1px solid #ddd;
@@ -273,10 +273,6 @@ nav {
   padding: 50px;
 } */
 
-.calendar-container {
-  display: flex;
-}
-
 .weekly-title {
   text-align: center;
   margin-top: 25px;
@@ -285,11 +281,11 @@ nav {
 }
 
 .timer-container {
-  display:block;
+  display: block;
   position: fixed;
   top: 100px;
   right: 100px;
-  background-color: rgba(255, 255, 255, 0.8);  
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
   border-radius: 10px;
   border: 1px solid grey;
@@ -329,16 +325,28 @@ nav {
 
   .calendar {
     display: flex;
+    justify-content: center;
     flex-direction: row;
   }
 
   .calendar-container {
     max-width: 1500px;
     margin: auto;
+    display: flex;
   }
 
   .day {
-    min-width: 150px;
+    font-size: 14px;
+    min-width: 100px;
     max-width: 300px;
+  }
+
+  .calendar-card-title {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .calendar-card-content {
+    font-size: 10px;
   }
 }
