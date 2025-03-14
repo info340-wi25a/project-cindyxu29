@@ -57,8 +57,8 @@ function App(props) {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/my-classes" element={<ClassPage classes={ userClasses } user={currentUser} />} />
-        <Route path="/my-classes/:classId/poses" element={<PosePage classes={ SAMPLE_POSES } />} />
+        <Route path="/my-classes" element={<ClassPage classes={ userClasses } user={ currentUser } />} />
+        <Route path="/my-classes/:classId/poses" element={<PosePage poses={ SAMPLE_POSES } />} />
         {/* <Route path="/pose/:classId" element={<PosePage classes={SAMPLE_CLASSES} />} /> */}
         <Route path="/calendar" element={<Calendar classes={ userClasses } />} />
         <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />

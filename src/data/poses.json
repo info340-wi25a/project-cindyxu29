@@ -1,27 +1,22 @@
-[
-  {
-    "title": "Tree Pose 1",
+{
+  "Tree Pose 1": {
     "duration": "11",
     "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
   },
-  {
-    "title": "Tree Pose 2",
+  "Tree Pose 2": {
     "duration": "11",
     "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
   },
-  {
-    "title": "Tree Pose 3",
+  "Tree Pose 3": {
     "duration": "11",
     "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
   },
-  {
-    "title": "Test Pose",
+  "Test Pose": {
     "duration": "11",
     "script": "Inhale, lift your hands to the the sky. Exhale, ground your feet to the top of your mat."
   },
-  {
-    "title": "Downward Dog Pose",
+  "Downward Dog Pose": {
     "duration": "11",
     "script": "Starting on all fours, lifting the hips, and straightening the legs to form an inverted V."
   }
-]
+}
