@@ -30,11 +30,12 @@ function PoseCard({ pose }) {
   );
 }
 
-export default function PoseMain({ classes, classId }) {
+// export default function PoseMain({ classes, classId }) {
+export default function PoseMain({ selectedClass }) {
   // let poses = props.poses;
 
-  const selectedClass = classes.find(({ id }) => id.toString() === classId.toString());
-  console.log(selectedClass)
+
+  // console.log(selectedClass)
   let poseCards = selectedClass.poses.map((pose, index) => {
     console.log(pose)
     return < PoseCard key={index} pose={pose} />;
