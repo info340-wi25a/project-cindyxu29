@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
 import { NavBar } from './NavBar';
 
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
+import { onAuthStateChanged, getAuth } from 'firebase/auth';
 
 import HomePage from './HomePage';
 import ClassPage from './ClassPage';
@@ -16,11 +17,42 @@ import Footer from './Footer';
 import LogIn from './LogIn';
 
 function App(props) {
-  const [userClasses, setUserClasses] = useState();
-  const userId = "01"; // testing
+  const [currentUser, setCurrentUser] = useState();
+  const [userClasses, setUserClasses] = useState([]);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const db = getDatabase();
+
+    const fetchUserClasses = (userId) => {
+      const classesRef = ref(db, 'users/' + userId + '/classes');
+      onValue(classesRef, (snapshot) => {
+        const dataObj = snapshot.val();
+
+        const keyArray = Object.keys(dataObj);
+        const classesArr = keyArray.map((keyString) => {
+          const transformed = dataObj[keyString];
+          return transformed;
+        })
+
+        setUserClasses(classesArr);
+      })
+    };
+
+    onAuthStateChanged(auth, (firebaseUserObj) => {
+      console.log("auth state changed");
+      setCurrentUser(firebaseUserObj);
+      if (firebaseUserObj) {
+        setCurrentUser(firebaseUserObj);
+        fetchUserClasses(firebaseUserObj.uid);
+      } else {
+        setCurrentUser(null);
+      }
+    });
+  }, []);
 
   const testUser = {
-    userid: "01",
+    userid: "RuNF2ZDSSmeyUSVGvRItdPgeKB43",
     classes: {
       class1: {
         title: "Gentle Yoga",
@@ -55,35 +87,6 @@ function App(props) {
     }
   };
 
-
-  const poses = SAMPLE_POSES;
-  const db = getDatabase();
-
-  // listen for changes on ref, then update
-  useEffect(() => {
-    // firebasePush(userRef, testUser);
-    const db = getDatabase();
-    const classesRef = ref(db, "users/-OLIU8bKC0RQGTjABKQr/classes");
-
-    onValue(classesRef, (snapshot) => {
-      const dataObj = snapshot.val();
-      console.log("dataObj: " + dataObj);
-
-      const keyArray = Object.keys(dataObj);
-      // console.log(keyArray);
-      const dataArr = keyArray.map((keyString) => {
-        const transformed = dataObj[keyString];
-        transformed.firebaseKey = keyString;
-        return transformed;
-      })
-
-      setUserClasses(dataArr);
-      // console.log(dataObj);
-    });
-  }, [])
-
-  console.log("userClasses: " + userClasses);
-  // console.log("sample classes" + SAMPLE_CLASSES);
 
   return (
     <>
