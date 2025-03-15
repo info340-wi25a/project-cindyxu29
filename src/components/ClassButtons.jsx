@@ -68,7 +68,7 @@ export default function ClassButtons({ onAddClass }) {
 
       {/* REACT MODAL */}
       <div>
-        <Modal show={show} onHide={handleClose} centered="true">
+        <Modal show={show} onHide={handleClose} centered>
           <Modal.Header closeButton>
             <Modal.Title>Create a new Class</Modal.Title>
           </Modal.Header>
