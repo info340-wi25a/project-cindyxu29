@@ -22,6 +22,7 @@ export default function ClassButtons({ onAddClass }) {
   }
   
   function handleShow() {
+    console.log("Modal Opened")
     setShow(true);
   }
 
@@ -40,9 +41,14 @@ export default function ClassButtons({ onAddClass }) {
     const auth = getAuth();
     const user = auth.currentUser;
     // console.log("auth: " + auth);
+    if(user){
     const db = getDatabase();
     const classesRef = ref(db, 'users/' + user.uid + '/classes');
     firebasePush(classesRef, newClass);
+    console.log("New class added to Firebase: ", newClass);
+    } else{
+      console.error("No user is logged in");
+    }
 
     onAddClass(newClass); // Pass new class to parent
     handleClose(); // Close modal after submitting
@@ -68,7 +74,7 @@ export default function ClassButtons({ onAddClass }) {
 
       {/* REACT MODAL */}
       <div>
-        <Modal show={show} onHide={handleClose} centered>
+        <Modal show={show} onHide={handleClose} centered="true">
           <Modal.Header closeButton>
             <Modal.Title>Create a new Class</Modal.Title>
           </Modal.Header>
