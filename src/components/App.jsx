@@ -33,11 +33,12 @@ function App(props) {
           const keyArray = Object.keys(dataObj);
           const classesArr = keyArray.map((keyString) => {
             const transformed = dataObj[keyString];
-            setUserClasses(classesArr);
             return transformed;
           })
+          setUserClasses(classesArr);
         } else {
           setUserClasses([]);
+          console.log("Clearing classes!");
           return;
         }
       })
@@ -60,7 +61,7 @@ function App(props) {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/my-classes" element={<ClassPage classes={ userClasses } user={ currentUser } />} />
-        <Route path="/my-classes/:classId/poses" element={<PosePage poses={ SAMPLE_POSES } />} />
+        <Route path="/my-classes/:classId/poses" element={<PosePage classes={ userClasses } />} />
         {/* <Route path="/pose/:classId" element={<PosePage classes={SAMPLE_CLASSES} />} /> */}
         <Route path="/calendar" element={<Calendar classes={ userClasses } />} />
         <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />

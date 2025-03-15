@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router';
-import { ref, push as firebasePush, getDatabase } from 'firebase/database';
+import { ref, push as firebasePush, getDatabase, update as firebaseUpdate } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 
 
@@ -44,7 +44,13 @@ export default function ClassButtons({ onAddClass }) {
     if(user){
     const db = getDatabase();
     const classesRef = ref(db, 'users/' + user.uid + '/classes');
-    firebasePush(classesRef, newClass);
+    
+    //save uid as property of class
+    firebasePush(classesRef, newClass).then((newClassesRef) => {
+      firebaseUpdate(newClassesRef, { uid: newClassesRef.key });
+    });
+
+
     console.log("New class added to Firebase: ", newClass);
     } else{
       console.error("No user is logged in");

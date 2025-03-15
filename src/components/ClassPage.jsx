@@ -11,7 +11,7 @@ export default function ClassPage(props) {
   console.log("currClasses: ", currClasses);
   const { classId } = useParams();
 
-  const selectedClass = SAMPLE_CLASSES.find((c) => c.id === classId);
+  const selectedClass = currClasses.find((c) => c.id === classId);
   if(!selectedClass){
     console.error("Class not found");
   }

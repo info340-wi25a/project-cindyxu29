@@ -9,7 +9,7 @@ function PoseCard({ pose }) {
     <div className="d-flex" >
       <div className="pose mb-4" >
         <div className="pose-body" >
-          <h2 className="pose-title">{pose.key}</h2>
+          <h2 className="pose-title">{pose.title}</h2>
           <p>
             <strong>Duration</strong>: {pose.duration} min | <strong>Script</strong>: {pose.script}
           </p>
@@ -33,7 +33,6 @@ function PoseCard({ pose }) {
 // export default function PoseMain({ classes, classId }) {
 export default function PoseMain(props) {
   let poses = props.poses;
-
 
   console.log(poses)
   let poseCards = poses.map((pose, index) => {

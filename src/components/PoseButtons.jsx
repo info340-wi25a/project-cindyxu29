@@ -3,8 +3,11 @@ import { Link } from 'react-router'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { ref, push as firebasePush, getDatabase } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
 
-export default function PoseButtons({ onAddPose }) {
+
+export default function PoseButtons(props) {
   const [show, setShow] = useState(false);
   const [poseName, setPoseName] = useState('');
   const [duration, setDuration] = useState('');
@@ -13,6 +16,9 @@ export default function PoseButtons({ onAddPose }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const classUID = props.classUID;
+  const onAddPose = props.onAddPose;
+
   const handleSubmit = () => {
     const newPose = {
       id: Date.now(),
@@ -20,6 +26,16 @@ export default function PoseButtons({ onAddPose }) {
       duration: duration,
       script: script,
     };
+    //FIREBASE
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if(user){
+    const db = getDatabase();
+    const posesRef = ref(db, 'users/' + user.uid + '/classes/' + classUID + '/poses/');
+    
+    //save uid as property of class
+    firebasePush(posesRef, newPose);
+
     onAddPose(newPose); // Pass new pose to parent component
     handleClose(); // Close modal after submitting
 
@@ -27,7 +43,8 @@ export default function PoseButtons({ onAddPose }) {
     setPoseName('');
     setDuration('');
     setScript('');
-  };
+    }
+  } 
 
   return (
     <>
