@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
 import { NavBar } from './NavBar';
 
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
-import { onAuthStateChanged, getAuth } from 'firebase/auth';
+import { onAuthStateChanged, getAuth, signOut } from 'firebase/auth';
 
 import HomePage from './HomePage';
 import ClassPage from './ClassPage';
@@ -29,14 +29,17 @@ function App(props) {
       const classesRef = ref(db, 'users/' + userId + '/classes');
       onValue(classesRef, (snapshot) => {
         const dataObj = snapshot.val();
-
-        const keyArray = Object.keys(dataObj);
-        const classesArr = keyArray.map((keyString) => {
-          const transformed = dataObj[keyString];
-          return transformed;
-        })
-
-        setUserClasses(classesArr);
+        if (dataObj) {
+          const keyArray = Object.keys(dataObj);
+          const classesArr = keyArray.map((keyString) => {
+            const transformed = dataObj[keyString];
+            setUserClasses(classesArr);
+            return transformed;
+          })
+        } else {
+          setUserClasses([]);
+          return;
+        }
       })
     };
 
@@ -44,10 +47,9 @@ function App(props) {
       console.log("auth state changed");
       setCurrentUser(firebaseUserObj);
       if (firebaseUserObj) {
-        setCurrentUser(firebaseUserObj);
         fetchUserClasses(firebaseUserObj.uid);
       } else {
-        setCurrentUser(null);
+        setUserClasses([]);
       }
     });
   }, []);
