@@ -2,11 +2,6 @@
 
   --text-color: black;
 
-  /* Blue Mode because it suits the backgournd of the homepage picture*/
-  /* --bg-color: #c2e1ff;
-  --btn-bg-hover-color: #72b6fa;
-  --btn-bg-color: #1d8eff; */
-
   /* Orange Mode since somehow ppl believe yoga belongs to be orange*/
   --bg-color: #fff4e8e0;
   --btn-bg-hover-color: #fabe7ee0;
@@ -191,7 +186,6 @@ nav {
 
 .search-input {
   border-radius: 5px;
-  /* padding-top: 10px; */
   margin-left: 10px;
 }
 
@@ -201,9 +195,6 @@ nav {
   padding-left: 20px;
   margin-top: 20px;
 }
-
-
-
 
 .day {
   border: 1px solid #ddd;
@@ -217,18 +208,6 @@ nav {
 .card {
   margin-top: 10px;
 }
-
-/* .timer-container {
-  display: none;
-  position: absolute;
-  top: 100px;
-  right: 20px;
-  background-color: #f0f0f0;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-} */
-
 
 
 .splash {
@@ -268,10 +247,11 @@ nav {
   justify-content: center;
 }
 
-/* .calendar-background {
-  background-image: url(../img/ocean.jpg);
-  padding: 50px;
-} */
+/* Ensures the calendar takes up the full width of the screen */
+.calendar {
+  width: 100%;
+  margin: 0 auto;
+}
 
 .weekly-title {
   text-align: center;
@@ -284,11 +264,12 @@ nav {
   display: block;
   position: fixed;
   top: 100px;
-  right: 100px;
+  right: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
   border-radius: 10px;
   border: 1px solid grey;
+  width: 200px;
 }
 
 /* Media Query for Large Screens */
@@ -308,10 +289,6 @@ nav {
   .menu-links ul {
     display: flex;
   }
-
-  /* .timer-container {
-    display: block;
-  } */
 
   .icon-btn {
     font-size: 16px;
@@ -349,4 +326,17 @@ nav {
   .calendar-card-content {
     font-size: 10px;
   }
+
+  .timer-container {
+    display: block;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 400px;
+  }
+
 }

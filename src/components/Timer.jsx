@@ -37,11 +37,11 @@ export default function Timer() {
   };
 
     return (
-        <div className="container">
+        <div >
           <div className="timer-container">
             <div className="timer">
               <h1 id="timerDisplay">{formatTime(timeLeft)}</h1>
-              <input type="number" id="minutesInput" placeholder="Minutes" disabled={isRunning} />
+              <input type="number" id="minutesInput" placeholder="Minutes" disabled={isRunning} min="0" />
               <button id="startButton" onClick={handleStart} disabled={isRunning}>Start Timer</button>
               <button id="resetButton" onClick={handleReset}>Reset</button>
             </div>

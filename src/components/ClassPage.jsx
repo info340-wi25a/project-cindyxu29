@@ -12,9 +12,10 @@ export default function ClassPage(props) {
   const { classId } = useParams();
 
   const selectedClass = currClasses.find((c) => c.id === classId);
-  if(!selectedClass){
+  
+  /*if(!selectedClass){
     console.error("Class not found");
-  }
+  }*/
   
   const [classes, setClasses] = useState(props.classes);
   console.log("classPage prop: " + props.classes);

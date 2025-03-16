@@ -32,7 +32,7 @@ export default function ClassButtons({ onAddClass }) {
       title: className,
       duration: duration,
       location: location,
-      date: date,
+      dayOfWeek: date,
       time: time,
       notes: notes,
       poses: {}
@@ -42,16 +42,16 @@ export default function ClassButtons({ onAddClass }) {
     const user = auth.currentUser;
     // console.log("auth: " + auth);
     if(user){
-    const db = getDatabase();
-    const classesRef = ref(db, 'users/' + user.uid + '/classes');
-    
-    //save uid as property of class
-    firebasePush(classesRef, newClass).then((newClassesRef) => {
-      firebaseUpdate(newClassesRef, { uid: newClassesRef.key });
-    });
+      const db = getDatabase();
+      const classesRef = ref(db, 'users/' + user.uid + '/classes');
+      
+      //save uid as property of class
+      firebasePush(classesRef, newClass).then((newClassesRef) => {
+        firebaseUpdate(newClassesRef, { uid: newClassesRef.key });
+      });
 
 
-    console.log("New class added to Firebase: ", newClass);
+      console.log("New class added to Firebase: ", newClass);
     } else{
       console.error("No user is logged in");
     }
@@ -102,17 +102,27 @@ export default function ClassButtons({ onAddClass }) {
               </Form.Group>
               <Form.Group controlId="location">
                 <Form.Label>Location</Form.Label>
-                <Form.Control type="text" placeholder="@UW IMA" 
+                <Form.Control type="text" placeholder="UW IMA" 
                   value={location} 
                   onChange={(e) => setLocation(e.target.value)}
                   required />
               </Form.Group>
-              <Form.Group controlId="date">
-                <Form.Label>Date</Form.Label>
-                <Form.Control type="date" placeholder="mm/dd/yyyy" 
-                  value={date} 
-                  onChange={(e) => setDate(e.target.value)}
-                  required />
+              
+              <Form.Group controlId="dayOfWeek">
+              <Form.Label>Day of Week</Form.Label>
+              <Form.Control
+                as="select"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+              >
+                <option value="">Select day</option>
+                {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
+                  <option key={day} value={day}>
+                    {day}
+                  </option>
+                ))}
+              </Form.Control>
               </Form.Group>
               <Form.Group controlId="time">
                 <Form.Label>Start Time</Form.Label>

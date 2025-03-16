@@ -51,9 +51,11 @@ export default function PoseButtons(props) {
       <Button variant="dark" onClick={handleShow}>
         Add Pose
       </Button>
+      {/*
       <Link to="/posesearch">
         <Button variant="dark">Search for poses</Button>
       </Link>
+      */}
 
       <div>
         <Modal show={show} onHide={handleClose}>
