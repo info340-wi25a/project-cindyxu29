@@ -3,7 +3,7 @@ import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
 import PoseButtons from './PoseButtons';
 
-function PoseCard({ pose }) {
+function PoseCard({ pose, index, onMovePoseUp, onMovePoseDown  }) {
   // let pose = props.pose;
   return (
     <div className="d-flex" >
@@ -13,11 +13,11 @@ function PoseCard({ pose }) {
           <p>
             <strong>Duration</strong>: {pose.duration} min | <strong>Script</strong>: {pose.script}
           </p>
-          <Button href="#" className="btn btn-dark">
+          <Button onClick={() => onMovePoseUp(index)} className="btn btn-dark">
             <span className="material-icons icon-btn">
               arrow_upward</span>
           </Button>
-          <Button href="#" className="btn btn-dark">
+          <Button onClick={() => onMovePoseDown(index)} className="btn btn-dark">
             <span className="material-icons icon-btn">
               arrow_downward</span>
           </Button>
@@ -32,13 +32,19 @@ function PoseCard({ pose }) {
 
 // export default function PoseMain({ classes, classId }) {
 export default function PoseMain(props) {
-  let poses = props.poses;
+  const { poses, onMovePoseUp, onMovePoseDown } = props;
 
-  console.log(poses)
-  let poseCards = poses.map((pose, index) => {
-    console.log(pose)
-    return < PoseCard key={index} pose={pose} />;
-  })
+  const poseCards = poses.map((pose, index) => {
+    return (
+      <PoseCard
+        key={index}
+        index={index}
+        pose={pose}
+        onMovePoseUp={onMovePoseUp}
+        onMovePoseDown={onMovePoseDown}
+      />
+    );
+  });
 
   return (
     <main>
