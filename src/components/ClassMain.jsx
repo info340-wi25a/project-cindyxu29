@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 
 export default function ClassMain(props) {
   const classesArray = props.classes;
-  console.log("classesArray:" +  classesArray)
   const [inputValue, setInputValue] = useState('');
 
   function handleChange(event) {
@@ -20,7 +19,6 @@ export default function ClassMain(props) {
     );
   }
   const filteredClasses = filterClasses(classesArray, inputValue);
-  console.log(filteredClasses);
 
 
   function renderClassCards(classes) {

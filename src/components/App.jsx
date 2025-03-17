@@ -22,7 +22,6 @@ function App(props) {
 
   useEffect(() => {
     const auth = getAuth();
-    console.log("auth: " + auth);
     const db = getDatabase();
 
     const fetchUserClasses = (userId) => {
@@ -38,14 +37,12 @@ function App(props) {
           setUserClasses(classesArr);
         } else {
           setUserClasses([]);
-          console.log("Clearing classes!");
           return;
         }
       })
     };
 
     onAuthStateChanged(auth, (firebaseUserObj) => {
-      console.log("auth state changed");
       setCurrentUser(firebaseUserObj);
       if (firebaseUserObj) {
         fetchUserClasses(firebaseUserObj.uid);

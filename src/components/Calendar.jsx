@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 export default function Calendar(props) {
     const classesArr = props.classes || [];
-    console.log("Classes Array:", classesArr);
 
     const daysMap = {
         "Sunday": [],

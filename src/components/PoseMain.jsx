@@ -10,8 +10,17 @@ function PoseCard(props) {
   const onMovePoseUp = props.onMovePoseUp;
   const onMovePoseDown = props.onMovePoseDown;
   const handlePoseDelete = props.handlePoseDelete;
+
+  function handleMoveUp() {
+    onMovePoseUp(index);
+  }
+  function handleMoveDown() {
+    onMovePoseDown(index);
+  }
+  function handleDelete() {
+    handlePoseDelete(pose);
+  }
   
-  console.log(pose);
   return (
     <div className="d-flex" >
       <div className="pose mb-4" >
@@ -20,15 +29,15 @@ function PoseCard(props) {
           <p>
             <strong>Duration</strong>: {pose.duration} min | <strong>Script</strong>: {pose.script}
           </p>
-          <Button onClick={() => onMovePoseUp(index)} className="btn btn-dark">
+          <Button onClick={handleMoveUp} className="btn btn-dark">
             <span className="material-icons icon-btn">
               arrow_upward</span>
           </Button>
-          <Button onClick={() => onMovePoseDown(index)} className="btn btn-dark">
+          <Button onClick={handleMoveDown} className="btn btn-dark">
             <span className="material-icons icon-btn">
               arrow_downward</span>
           </Button>
-          <Button onClick={ () => handlePoseDelete(pose) } className="btn btn-dark">
+          <Button onClick={handleDelete} className="btn btn-dark">
             Delete
           </Button>
         </div>

@@ -17,13 +17,11 @@ export default function PosePage(props) {
 
   // Ensure that classId and userClasses are valid
   if (!classId || !userClasses || userClasses.length === 0) {
-    console.log("classId is missing or userClasses is empty");
     return <div>No classes found.</div>; // Or any appropriate error message or redirect
   }
  
   // Check if selectedClass is found
   if (!selectedClass) {
-    console.log("Class not found!");
     return <div>Class not found.</div>; // Or any other appropriate message
   }
 
@@ -59,12 +57,10 @@ export default function PosePage(props) {
   }
 
   function handlePoseDelete(pose) {
-    console.log("handlePoseDlete called");
     const auth = getAuth();
     const db =  getDatabase();
     const user = auth.currentUser;
     const poseRef = firebaseRef(db, 'users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
-    console.log('users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
     firebaseRemove(poseRef)
   }
 

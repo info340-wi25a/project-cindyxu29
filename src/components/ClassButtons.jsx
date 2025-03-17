@@ -22,7 +22,6 @@ export default function ClassButtons({ onAddClass }) {
   }
   
   function handleShow() {
-    console.log("Modal Opened")
     setShow(true);
   }
 
@@ -40,7 +39,6 @@ export default function ClassButtons({ onAddClass }) {
     //FIREBASE
     const auth = getAuth();
     const user = auth.currentUser;
-    // console.log("auth: " + auth);
     if(user){
       const db = getDatabase();
       const classesRef = ref(db, 'users/' + user.uid + '/classes');
@@ -49,11 +47,6 @@ export default function ClassButtons({ onAddClass }) {
       firebasePush(classesRef, newClass).then((newClassesRef) => {
         firebaseUpdate(newClassesRef, { uid: newClassesRef.key });
       });
-
-
-      console.log("New class added to Firebase: ", newClass);
-    } else{
-      console.error("No user is logged in");
     }
 
     onAddClass(newClass); // Pass new class to parent
