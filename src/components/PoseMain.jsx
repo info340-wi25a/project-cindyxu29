@@ -2,9 +2,16 @@ import React from "react";
 import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
 import PoseButtons from './PoseButtons';
+import {remove} from 'firebase/database';
 
-function PoseCard({ pose, index, onMovePoseUp, onMovePoseDown  }) {
-  // let pose = props.pose;
+function PoseCard(props) {
+  const pose = props.pose;
+  const index = props.index;
+  const onMovePoseUp = props.onMovePoseUp;
+  const onMovePoseDown = props.onMovePoseDown;
+  const handlePoseDelete = props.handlePoseDelete;
+  
+  console.log(pose);
   return (
     <div className="d-flex" >
       <div className="pose mb-4" >
@@ -21,7 +28,7 @@ function PoseCard({ pose, index, onMovePoseUp, onMovePoseDown  }) {
             <span className="material-icons icon-btn">
               arrow_downward</span>
           </Button>
-          <Button href="#" className="btn btn-dark">
+          <Button onClick={ () => handlePoseDelete(pose) } className="btn btn-dark">
             Delete
           </Button>
         </div>
@@ -32,16 +39,19 @@ function PoseCard({ pose, index, onMovePoseUp, onMovePoseDown  }) {
 
 // export default function PoseMain({ classes, classId }) {
 export default function PoseMain(props) {
-  const { poses, onMovePoseUp, onMovePoseDown } = props;
+  const poses = props.poses;
+  const onMovePoseUp = props.onMovePoseUp;
+  const onMovePoseDown = props.onMovePoseDown;
+  const handlePoseDelete = props.handlePoseDelete;
 
   const poseCards = poses.map((pose, index) => {
     return (
       <PoseCard
-        key={index}
         index={index}
         pose={pose}
         onMovePoseUp={onMovePoseUp}
         onMovePoseDown={onMovePoseDown}
+        handlePoseDelete={handlePoseDelete}
       />
     );
   });

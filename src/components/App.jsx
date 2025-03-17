@@ -12,7 +12,7 @@ import PosePage from './PosePage';
 import SAMPLE_POSES from '../data/poses.json';
 import SAMPLE_CLASSES from '../data/classes.json';
 import Calendar from './Calendar';
-import Search from './Search';
+// import Search from './Search';
 import Footer from './Footer';
 import LogIn from './LogIn';
 
@@ -65,7 +65,7 @@ function App(props) {
         <Route path="/my-classes/:classId/poses" element={<PosePage classes={ userClasses } />} />
         {/* <Route path="/pose/:classId" element={<PosePage classes={SAMPLE_CLASSES} />} /> */}
         <Route path="/calendar" element={<Calendar classes={ userClasses } />} />
-        <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} />
+        {/* <Route path="/posesearch" element={<Search poses={SAMPLE_POSES} />} /> */}
         <Route path="/login" element={<LogIn/>}/>
 
         {/* Catch-all route: redirect to the homepage when users try to input an incorrect link in the URL*/}

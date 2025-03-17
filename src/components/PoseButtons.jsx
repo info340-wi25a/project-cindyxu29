@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { ref, push as firebasePush, getDatabase } from 'firebase/database';
+import { ref, push as firebasePush, update as firebaseUpdate, getDatabase } from 'firebase/database';
+
 import { getAuth } from 'firebase/auth';
 
 
@@ -29,12 +29,15 @@ export default function PoseButtons(props) {
     //FIREBASE
     const auth = getAuth();
     const user = auth.currentUser;
+
     if(user){
     const db = getDatabase();
     const posesRef = ref(db, 'users/' + user.uid + '/classes/' + classUID + '/poses/');
     
-    //save uid as property of class
-    firebasePush(posesRef, newPose);
+    //save uid as property of pose
+    firebasePush(posesRef, newPose).then((newPoseRef) => {
+      firebaseUpdate(newPoseRef, { uid: newPoseRef.key });
+    });
 
     onAddPose(newPose); // Pass new pose to parent component
     handleClose(); // Close modal after submitting

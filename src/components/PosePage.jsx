@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PoseMain from './PoseMain'
 import { useParams } from "react-router";
 import PoseButtons from './PoseButtons';
-import { getDatabase, ref, push as firebasePush } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
+import { getDatabase, ref as firebaseRef, remove as firebaseRemove } from 'firebase/database';
+
 
 
 export default function PosePage(props) {
@@ -54,19 +56,29 @@ export default function PosePage(props) {
 
   function handleAddPose(newPose) {
     setPoses((prevPoses) => [...prevPoses, newPose]);
-    console.log("newPose", newPose)
-    console.log("poseList", poseList)
   }
+
+  function handlePoseDelete(pose) {
+    console.log("handlePoseDlete called");
+    const auth = getAuth();
+    const db =  getDatabase();
+    const user = auth.currentUser;
+    const poseRef = firebaseRef(db, 'users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
+    console.log('users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
+    firebaseRemove(poseRef)
+  }
+
   return (
     <>
       <main>
         <div className="header">
           <h1>Poses in This Class</h1>
-          <PoseButtons onAddPose={handleAddPose} classUID = {selectedClass.uid}/>
+          <PoseButtons onAddPose={handleAddPose} classUID = {selectedClass.uid} />
         </div>
-        <PoseMain poses = { poseList } 
+        <PoseMain poses = { posesArr } 
           onMovePoseUp={handleMovePoseUp}
-          onMovePoseDown={handleMovePoseDown} />
+          onMovePoseDown={handleMovePoseDown}
+          handlePoseDelete = { handlePoseDelete } />
       </main>
     </>
   )
