@@ -108,17 +108,17 @@ export default function PoseButtons(props) {
 function PoseModalForm({ poseName, setPoseName, duration, setDuration, script, setScript }) {
   return (
     <Form>
-      <Form.Group controlId='poseName'>
+      <Form.Group>
         <Form.Label htmlFor="className">Pose Name</Form.Label>
         <Form.Control type='text' id="poseName" placeholder='Tree Pose' value={poseName}
           onChange={(e) => setPoseName(e.target.value)} />
       </Form.Group>
-      <Form.Group controlId='duration'>
+      <Form.Group>
         <Form.Label htmlFor="className">Duration (min)</Form.Label>
         <Form.Control type='text' id="duration" placeholder='2' value={duration}
           onChange={(e) => setDuration(e.target.value)} />
       </Form.Group>
-      <Form.Group controlId='script'>
+      <Form.Group>
         <Form.Label htmlFor="className">Script</Form.Label>
         <Form.Control type='text' id="script" placeholder='Inhale, lift your hands to the sky. Exhale, ground your feet to the earth'
           value={script}

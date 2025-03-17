@@ -55,6 +55,7 @@ export default function PoseMain(props) {
   const poseCards = poses.map((pose, index) => {
     return (
       <PoseCard
+      key={pose.uid || index}
         index={index}
         pose={pose}
         onMovePoseUp={onMovePoseUp}
@@ -70,6 +71,15 @@ export default function PoseMain(props) {
         <div className="row">
           {poseCards}
         </div >
+        <div className="instruction-container">
+          <h3>Plan Your Yoga Classes with Ease</h3>
+          <p className="instructions">
+            This website is designed to help you easily plan and manage your weekly yoga classes. Start by adding a class you'll be teaching in "My Classes". Make sure to select the day of the week you'll be teaching that class, and you'll be able to view your weekly schedule in the calendar! You can then customize the class by adding the yoga poses you'll carry out in that class.
+          </p>
+          <p className="instructions">
+            Use our yoga poses guide for inspiration and guidance. When the class begins, set the timer to keep your session on track! This tool is here to simplify your preparation, allowing you to focus more on teaching and less on planning. Feel free to update your schedule each week, making adjustments as needed to fit your teaching rhythm and enjoy yoga!
+          </p>
+      </div>
       </div >
       <div className="timer-container">
         <Timer />

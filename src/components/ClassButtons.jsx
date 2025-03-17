@@ -79,21 +79,21 @@ export default function ClassButtons({ onAddClass }) {
           </Modal.Header>
           <Modal.Body>
             <Form>
-              <Form.Group controlId="className">
+              <Form.Group>
                 <Form.Label htmlFor="className">Class Name</Form.Label>
                 <Form.Control type="text" id="className" placeholder="Gental Yoga" 
                   value={className} 
                   onChange={(e) => setClassName(e.target.value)}
                   required />
               </Form.Group>
-              <Form.Group controlId="duration">
+              <Form.Group>
                 <Form.Label htmlFor="className">Duration (min)</Form.Label>
                 <Form.Control type="text" id="duration" placeholder="2" 
                   value={duration} 
                   onChange={(e) => setDuration(e.target.value)}
                   required />
               </Form.Group>
-              <Form.Group controlId="location">
+              <Form.Group>
                 <Form.Label htmlFor="className">Location</Form.Label>
                 <Form.Control type="text" id="location" placeholder="UW IMA" 
                   value={location} 
@@ -101,7 +101,7 @@ export default function ClassButtons({ onAddClass }) {
                   required />
               </Form.Group>
               
-              <Form.Group controlId="dayOfWeek">
+              <Form.Group>
               <Form.Label htmlFor="className">Day of Week</Form.Label>
               <Form.Control as="select" id="dayOfWeek"
                 value={date}
@@ -116,14 +116,14 @@ export default function ClassButtons({ onAddClass }) {
                 ))}
               </Form.Control>
               </Form.Group>
-              <Form.Group controlId="time">
+              <Form.Group>
                 <Form.Label htmlFor="className">Start Time</Form.Label>
                 <Form.Control type="time" id="time" placeholder="2:00pm" 
                   value={time} 
                   onChange={(e) => setTime(e.target.value)}
                   required />
               </Form.Group>
-              <Form.Group controlId="notes">
+              <Form.Group>
                 <Form.Label htmlFor="className">Notes</Form.Label>
                 <Form.Control type="text" id="notes" placeholder="Beginning lession for UW students" 
                   value={notes} 

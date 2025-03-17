@@ -127,6 +127,17 @@ nav {
 }
 
 /* Main Content */
+
+h3 {
+  padding-top: 100px;
+  padding-left: 10px;
+  font-family: 'Nunito Sans', Arial, sans-serif;
+}
+.instructions {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  padding-left: 10px;
+}
+
 .container {
   margin-top: 20px;
 }
