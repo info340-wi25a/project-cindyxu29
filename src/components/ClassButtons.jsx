@@ -27,7 +27,7 @@ export default function ClassButtons({ onAddClass }) {
 
   function handleSubmit() {
     const newClass = {
-      id: Date.now(),  // Unique ID
+      id: Date.now(),
       title: className,
       duration: duration,
       location: location,
@@ -49,8 +49,8 @@ export default function ClassButtons({ onAddClass }) {
       });
     }
 
-    onAddClass(newClass); // Pass new class to parent
-    handleClose(); // Close modal after submitting
+    onAddClass(newClass);
+    handleClose();
 
     // Clear input fields
     setClassName('');
@@ -80,31 +80,30 @@ export default function ClassButtons({ onAddClass }) {
           <Modal.Body>
             <Form>
               <Form.Group controlId="className">
-                <Form.Label>Class Name</Form.Label>
-                <Form.Control type="text" placeholder="Gental Yoga" 
+                <Form.Label htmlFor="className">Class Name</Form.Label>
+                <Form.Control type="text" id="className" placeholder="Gental Yoga" 
                   value={className} 
                   onChange={(e) => setClassName(e.target.value)}
                   required />
               </Form.Group>
               <Form.Group controlId="duration">
-                <Form.Label>Duration (min)</Form.Label>
-                <Form.Control type="text" placeholder="2" 
+                <Form.Label htmlFor="className">Duration (min)</Form.Label>
+                <Form.Control type="text" id="duration" placeholder="2" 
                   value={duration} 
                   onChange={(e) => setDuration(e.target.value)}
                   required />
               </Form.Group>
               <Form.Group controlId="location">
-                <Form.Label>Location</Form.Label>
-                <Form.Control type="text" placeholder="UW IMA" 
+                <Form.Label htmlFor="className">Location</Form.Label>
+                <Form.Control type="text" id="location" placeholder="UW IMA" 
                   value={location} 
                   onChange={(e) => setLocation(e.target.value)}
                   required />
               </Form.Group>
               
               <Form.Group controlId="dayOfWeek">
-              <Form.Label>Day of Week</Form.Label>
-              <Form.Control
-                as="select"
+              <Form.Label htmlFor="className">Day of Week</Form.Label>
+              <Form.Control as="select" id="dayOfWeek"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 required
@@ -118,15 +117,15 @@ export default function ClassButtons({ onAddClass }) {
               </Form.Control>
               </Form.Group>
               <Form.Group controlId="time">
-                <Form.Label>Start Time</Form.Label>
-                <Form.Control type="time" placeholder="2:00pm" 
+                <Form.Label htmlFor="className">Start Time</Form.Label>
+                <Form.Control type="time" id="time" placeholder="2:00pm" 
                   value={time} 
                   onChange={(e) => setTime(e.target.value)}
                   required />
               </Form.Group>
               <Form.Group controlId="notes">
-                <Form.Label>Notes</Form.Label>
-                <Form.Control type="text" placeholder="Beginning lession for UW students" 
+                <Form.Label htmlFor="className">Notes</Form.Label>
+                <Form.Control type="text" id="notes" placeholder="Beginning lession for UW students" 
                   value={notes} 
                   onChange={(e) => setNotes(e.target.value)} />
               </Form.Group>

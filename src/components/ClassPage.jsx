@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-// import Header from './Header';
 import ClassMain from './ClassMain';
 import ClassButtons from './ClassButtons';
 import { useParams } from "react-router";
 import SAMPLE_CLASSES from '../data/classes.json';
-// import Header
 
 export default function ClassPage(props) {
   const currClasses = props.classes;
@@ -15,7 +13,7 @@ export default function ClassPage(props) {
   const [classes, setClasses] = useState(props.classes);
 
   function handleAddClass(newClass) {
-    setClasses((prevClasses) => [...prevClasses, newClass]); // Update state with new class
+    setClasses((prevClasses) => [...prevClasses, newClass]);
   }
 
   return (

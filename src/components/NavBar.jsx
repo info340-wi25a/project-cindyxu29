@@ -4,14 +4,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
-
-
 export function NavBar() {
     const [signedIn, setSignedIn] = useState(false);
     const auth = getAuth();
     const navigate = useNavigate();
     useEffect(() => {
-        //returns a function that will "unregister" (turn off) the listener
         const unregisterFunction = onAuthStateChanged(auth, (firebaseUser) => {
           //handle user state change
           if(firebaseUser){
@@ -26,7 +23,7 @@ export function NavBar() {
     
         //cleanup function for when component is removed
         function cleanup() {
-          unregisterFunction(); //call the unregister function
+          unregisterFunction();
         }
         return cleanup; //effect hook callback returns the cleanup function
       }, []);
@@ -70,7 +67,6 @@ export function NavBar() {
 
 
     return (
-        
         <header className="header-container">
             <nav className="nav-container">
                 <div className="brand-name">

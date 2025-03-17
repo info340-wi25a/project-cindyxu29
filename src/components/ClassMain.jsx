@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router';
 
-
-
 export default function ClassMain(props) {
   const classesArray = props.classes;
   const [inputValue, setInputValue] = useState('');

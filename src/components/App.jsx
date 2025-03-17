@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router'; // Use BrowserRouter here
 import { NavBar } from './NavBar';
@@ -12,7 +11,6 @@ import PosePage from './PosePage';
 import SAMPLE_POSES from '../data/poses.json';
 import SAMPLE_CLASSES from '../data/classes.json';
 import Calendar from './Calendar';
-// import Search from './Search';
 import Footer from './Footer';
 import LogIn from './LogIn';
 

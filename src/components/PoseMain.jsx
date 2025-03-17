@@ -46,7 +46,6 @@ function PoseCard(props) {
   );
 }
 
-// export default function PoseMain({ classes, classId }) {
 export default function PoseMain(props) {
   const poses = props.poses;
   const onMovePoseUp = props.onMovePoseUp;
