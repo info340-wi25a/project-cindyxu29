@@ -93,7 +93,7 @@ export default function PoseButtons(props) {
         {isImageOpen && (
         <div className="overlay" onClick={handleCloseImage}>
           <img 
-            src="../../img/yoga-pose.jpg" 
+            src="/img/yoga-pose.jpg" 
             alt="Yoga Poses Guide"
             className="popup-image"
             onClick={(e) => e.stopPropagation()}
