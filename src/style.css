@@ -236,6 +236,23 @@ nav {
   font-style: italic;
 }
 
+.login-heading-text {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.login-container {
+  /* background-color: white; */
+  border: 2px solid rgb(139, 137, 137);
+  border-radius: 20px;
+  padding: 30px;
+  width: 30%;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #f3ede0;
+}
+
 .homepage-button {
   margin-top: 30px;
   text-align: center;

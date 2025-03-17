@@ -4,25 +4,29 @@ import { useParams } from "react-router";
 import PoseButtons from './PoseButtons';
 import { getAuth } from 'firebase/auth';
 import { getDatabase, ref as firebaseRef, remove as firebaseRemove } from 'firebase/database';
-
+import SAMPLE_POSES from '../data/poses.json';
+import SAMPLE_CLASSES from '../data/classes.json';
 
 
 export default function PosePage(props) {
+  const auth = getAuth();
+  const db =  getDatabase();
+  const user = auth.currentUser;
+
   const userClasses = props.classes;
   const { classId } = useParams();
 
   const selectedClass = userClasses.find(({ id }) => id == classId);
 
-  const [poseList, setPoses] = useState([]);
-
   // Ensure that classId and userClasses are valid
   if (!classId || !userClasses || userClasses.length === 0) {
-    return <div>No classes found.</div>; // Or any appropriate error message or redirect
+    return <div>No poses found.</div>;
   }
+
  
   // Check if selectedClass is found
   if (!selectedClass) {
-    return <div>Class not found.</div>; // Or any other appropriate message
+    return <div>Class not found.</div>;
   }
 
   // Ensure poses exists in selectedClass
@@ -32,7 +36,9 @@ export default function PosePage(props) {
     const transformed = posesObj[keyString];
     return {key: keyString, ...transformed};
   });
-  
+
+  const [poseList, setPoses] = useState([]);
+
 
   // Function to move a pose up
   function handleMovePoseUp(index) {
@@ -54,14 +60,18 @@ export default function PosePage(props) {
 
   function handleAddPose(newPose) {
     setPoses((prevPoses) => [...prevPoses, newPose]);
+
+
   }
 
   function handlePoseDelete(pose) {
     const auth = getAuth();
     const db =  getDatabase();
     const user = auth.currentUser;
-    const poseRef = firebaseRef(db, 'users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
-    firebaseRemove(poseRef)
+    if (user){
+      const poseRef = firebaseRef(db, 'users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
+      firebaseRemove(poseRef)
+    }
   }
 
   return (

@@ -24,10 +24,15 @@ export default function LogIn(props) {
 
     return (
         <>
-            <StyledFirebaseAuth 
-            firebaseAuth={auth}
-            uiConfig={firebaseUIConfig}
-            />
+            <div className="login-container">
+              <h1 className="login-heading-text"> Please sign in to create and manage your yoga classes! </h1>
+              <StyledFirebaseAuth 
+              className="log-in-buttons"
+              firebaseAuth={auth}
+              uiConfig={firebaseUIConfig}
+              />
+            </div>
+
 
         </>
     );

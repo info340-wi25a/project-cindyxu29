@@ -8,18 +8,11 @@ import SAMPLE_CLASSES from '../data/classes.json';
 
 export default function ClassPage(props) {
   const currClasses = props.classes;
-  console.log("currClasses: ", currClasses);
   const { classId } = useParams();
 
   const selectedClass = currClasses.find((c) => c.id === classId);
   
-  /*if(!selectedClass){
-    console.error("Class not found");
-  }*/
-  
   const [classes, setClasses] = useState(props.classes);
-  console.log("classPage prop: " + props.classes);
-  // console.log("classPage classes var: " + classes);
 
   function handleAddClass(newClass) {
     setClasses((prevClasses) => [...prevClasses, newClass]); // Update state with new class

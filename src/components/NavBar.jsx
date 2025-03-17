@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router';
+import { NavLink, Link, useNavigate } from 'react-router';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
@@ -9,15 +9,18 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 export function NavBar() {
     const [signedIn, setSignedIn] = useState(false);
     const auth = getAuth();
-
+    const navigate = useNavigate();
     useEffect(() => {
         //returns a function that will "unregister" (turn off) the listener
         const unregisterFunction = onAuthStateChanged(auth, (firebaseUser) => {
           //handle user state change
           if(firebaseUser){
             setSignedIn(true);
+            navigate('/home');
           } else {
             setSignedIn(false);
+            navigate('/home');
+
           }
         })
     
@@ -27,6 +30,14 @@ export function NavBar() {
         }
         return cleanup; //effect hook callback returns the cleanup function
       }, []);
+
+        // if user is not signed in, route to log-in page
+    let linkTo = '';
+    if (!signedIn){
+        linkTo = 'login'
+    } else {
+        linkTo = 'my-classes'
+    }
 
     const handleSignOut = () => {
         signOut(auth)
@@ -51,9 +62,9 @@ export function NavBar() {
 
     function renderDropDownButton() {
         if (signedIn) {
-            return <button onClick={handleSignOut}>Sign Out</button>;
+            return <Dropdown.Item onClick={handleSignOut}>Sign Out</Dropdown.Item>;
         } else {
-            return <NavLink to="/login">Sign In</NavLink>;
+            return <Dropdown.Item as={Link} to="/login">Sign In</Dropdown.Item>;
         }
     }
 
@@ -69,7 +80,7 @@ export function NavBar() {
                 <div className="menu-links">
                     <ul>
                         <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/my-classes">My Classes</NavLink></li>
+                        <li><NavLink to={linkTo}>My Classes</NavLink></li>
                         <li>{ renderNavButton() }</li>
                     </ul>
                 </div>
@@ -82,7 +93,7 @@ export function NavBar() {
                         <Dropdown.Item as={Link} to="/">
                             Home
                         </Dropdown.Item>
-                        <Dropdown.Item as={Link} to="/my-classes">
+                        <Dropdown.Item as={Link} to={linkTo}>
                             My Classes
                         </Dropdown.Item>
                         { renderDropDownButton() }

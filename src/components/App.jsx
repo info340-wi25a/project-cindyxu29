@@ -55,9 +55,9 @@ function App(props) {
 
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage userStatus={currentUser} />} />
         <Route path="/my-classes" element={<ClassPage classes={ userClasses } user={ currentUser } />} />
         <Route path="/my-classes/:classId/poses" element={<PosePage classes={ userClasses } />} />
         {/* <Route path="/pose/:classId" element={<PosePage classes={SAMPLE_CLASSES} />} /> */}
