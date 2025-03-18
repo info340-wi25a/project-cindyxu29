@@ -47,7 +47,7 @@ button:hover,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 7rem;
+  padding: 1rem 0rem;
   background-color: #ffffff;
   box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -68,6 +68,7 @@ button:hover,
   /* Space between the icon and the text */
   vertical-align: middle;
   /* Align the icon vertically with the text */
+  
 }
 
 .brand-name a {
@@ -202,6 +203,7 @@ h3 {
   padding-bottom: 15px;
   padding-left: 20px;
   margin-top: 20px;
+ 
 }
 
 .day {
@@ -254,10 +256,11 @@ h3 {
   border: 2px solid rgb(139, 137, 137);
   border-radius: 20px;
   padding: 30px;
-  width: 30%;
-  margin: auto;
+  width: 80%;
+  margin: auto; 
   margin-top: 100px;
   background-color: #f3ede0;
+  
 }
 
 .homepage-button {
@@ -322,6 +325,31 @@ h3 {
 @media (min-width: 768px) {
   body {
     padding-top: 5.625rem;
+  }
+  .nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 0.625rem 0.625rem;
+    z-index: 999;
+  }
+  .login-container {
+    /* background-color: white; */
+    border: 2px solid rgb(139, 137, 137);
+    border-radius: 20px;
+    padding: 30px;
+    width: 40%;
+    margin: auto; 
+    margin-top: 100px;
+    background-color: #f3ede0;
+    
   }
 
   .hamburger-menu {
