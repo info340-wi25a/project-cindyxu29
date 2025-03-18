@@ -10,7 +10,7 @@ import SAMPLE_CLASSES from '../data/classes.json';
 
 export default function PosePage(props) {
   const auth = getAuth();
-  const db =  getDatabase();
+  const db = getDatabase();
   const user = auth.currentUser;
 
   const userClasses = props.classes;
@@ -23,7 +23,7 @@ export default function PosePage(props) {
     return <div>No poses found.</div>;
   }
 
- 
+
   // Check if selectedClass is found
   if (!selectedClass) {
     return <div>Class not found.</div>;
@@ -34,10 +34,11 @@ export default function PosePage(props) {
   const keyArray = Object.keys(posesObj);
   const posesArr = keyArray.map((keyString) => {
     const transformed = posesObj[keyString];
-    return {key: keyString, ...transformed};
+    return { key: keyString, ...transformed };
   });
 
-  const [poseList, setPoses] = useState([]);
+  // const [poseList, setPoses] = useState([]);
+  const [poseList, setPoses] = useState(posesArr);
 
 
   // Function to move a pose up
@@ -66,10 +67,10 @@ export default function PosePage(props) {
 
   function handlePoseDelete(pose) {
     const auth = getAuth();
-    const db =  getDatabase();
+    const db = getDatabase();
     const user = auth.currentUser;
-    if (user){
-      const poseRef = firebaseRef(db, 'users/' + user.uid +'/classes/' + selectedClass.uid + '/poses/' + pose.uid);
+    if (user) {
+      const poseRef = firebaseRef(db, 'users/' + user.uid + '/classes/' + selectedClass.uid + '/poses/' + pose.uid);
       firebaseRemove(poseRef)
     }
   }
@@ -79,12 +80,12 @@ export default function PosePage(props) {
       <main>
         <div className="header">
           <h1>Poses in This Class</h1>
-          <PoseButtons onAddPose={handleAddPose} classUID = {selectedClass.uid} />
+          <PoseButtons onAddPose={handleAddPose} classUID={selectedClass.uid} />
         </div>
-        <PoseMain poses = { posesArr } 
+        <PoseMain poses={poseList}
           onMovePoseUp={handleMovePoseUp}
           onMovePoseDown={handleMovePoseDown}
-          handlePoseDelete = { handlePoseDelete } />
+          handlePoseDelete={handlePoseDelete} />
       </main>
     </>
   )
