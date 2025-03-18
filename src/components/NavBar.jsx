@@ -3,6 +3,7 @@ import { NavLink, Link, useNavigate } from 'react-router';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import logo from '../../img/favicon.png';
 
 export function NavBar() {
     const [signedIn, setSignedIn] = useState(false);
@@ -70,7 +71,7 @@ export function NavBar() {
         <header className="header-container">
             <nav className="nav-container">
                 <div className="brand-name">
-                    <img src="/img/favicon.png" alt="YogaEase Logo" className="nav-logo" />
+                    <img src={logo} alt="YogaEase Logo" className="nav-logo" />
                     <NavLink to="/">YogaEase</NavLink>
                 </div>
                 <div className="menu-links">
