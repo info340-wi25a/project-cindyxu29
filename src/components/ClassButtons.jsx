@@ -26,7 +26,6 @@ export default function ClassButtons({ onAddClass }) {
   }
 
   function resetForm() {
-    // Clear input fields
     setClassName('');
     setDuration('');
     setLocation('');
@@ -87,7 +86,6 @@ export default function ClassButtons({ onAddClass }) {
         <Button className="class-button" variant="dark">Go to Calendar</Button>
       </Link>
 
-      {/* REACT MODAL */}
       <Modal show={show} onHide={handleClose} centered="true">
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Modal.Header closeButton>

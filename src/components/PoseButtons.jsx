@@ -1,3 +1,5 @@
+// Ref: https://react-bootstrap.netlify.app/docs/components/modal/
+// Ref: https://react-bootstrap.netlify.app/docs/forms/validation
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -12,14 +14,32 @@ export default function PoseButtons(props) {
   const [duration, setDuration] = useState('');
   const [script, setScript] = useState('');
   const [isImageOpen, setImageOpen] = useState(false);
+  const [validated, setValidated] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const { onAddPose, classUID } = props;
+
   const handleShow = () => setShow(true);
+  function handleClose() {
+    setShow(false);
+    resetForm();
+  }
 
-  const classUID = props.classUID;
-  const onAddPose = props.onAddPose;
+  function resetForm() {
+    setPoseName('');
+    setDuration('');
+    setScript('');
+    setValidated(false);
+  }
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      setValidated(true);
+      return;
+    }
+    // setValidated(true);
     const newPose = {
       id: Date.now(),
       title: poseName,
@@ -29,21 +49,17 @@ export default function PoseButtons(props) {
     //FIREBASE
     const auth = getAuth();
     const user = auth.currentUser;
+    if (user) {
+      const db = getDatabase();
+      const posesRef = ref(db, 'users/' + user.uid + '/classes/' + classUID + '/poses/');
 
-    if(user){
-    const db = getDatabase();
-    const posesRef = ref(db, 'users/' + user.uid + '/classes/' + classUID + '/poses/');
-    
-    firebasePush(posesRef, newPose).then((newPoseRef) => {
-      firebaseUpdate(newPoseRef, { uid: newPoseRef.key });
-    });
+      firebasePush(posesRef, newPose).then((newPoseRef) => {
+        firebaseUpdate(newPoseRef, { uid: newPoseRef.key });
+      });
 
-    onAddPose(newPose); 
-    handleClose();
+      onAddPose(newPose);
+      handleClose();
 
-    setPoseName('');
-    setDuration('');
-    setScript('');
     }
   };
 
@@ -65,8 +81,8 @@ export default function PoseButtons(props) {
         Yoga Poses Guide
       </Button>
 
-      <div>
-        <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Modal.Header closeButton>
             <Modal.Title>Add a new Pose</Modal.Title>
           </Modal.Header>
@@ -78,45 +94,49 @@ export default function PoseButtons(props) {
               setDuration={setDuration}
               script={script}
               setScript={setScript}
+              validated={validated}
             />
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleSubmit}>
+            <Button variant="primary" type="submit">
               Add Pose
             </Button>
           </Modal.Footer>
-        </Modal>
+        </Form>
+      </Modal>
 
-        {isImageOpen && (
+      {isImageOpen && (
         <div className="overlay" onClick={handleCloseImage}>
-          <img 
-            src="/img/yoga-pose.jpg" 
+          <img
+            src="/img/yoga-pose.jpg"
             alt="Yoga Poses Guide"
             className="popup-image"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
-        )}
-      </div>
+      )}
     </>
   )
 }
 
 function PoseModalForm({ poseName, setPoseName, duration, setDuration, script, setScript }) {
   return (
-    <Form>
+    <>
       <Form.Group>
         <Form.Label htmlFor="className">Pose Name</Form.Label>
         <Form.Control type='text' id="poseName" placeholder='Tree Pose' value={poseName}
-          onChange={(e) => setPoseName(e.target.value)} />
+          onChange={(e) => setPoseName(e.target.value)}
+          required />
       </Form.Group>
       <Form.Group>
         <Form.Label htmlFor="className">Duration (min)</Form.Label>
         <Form.Control type='text' id="duration" placeholder='2' value={duration}
-          onChange={(e) => setDuration(e.target.value)} />
+          onChange={(e) => setDuration(e.target.value)}
+          // isInvalid={validated && !duration}
+          required />
       </Form.Group>
       <Form.Group>
         <Form.Label htmlFor="className">Script</Form.Label>
@@ -124,6 +144,6 @@ function PoseModalForm({ poseName, setPoseName, duration, setDuration, script, s
           value={script}
           onChange={(e) => setScript(e.target.value)} />
       </Form.Group>
-    </Form>
+    </>
   )
 }
