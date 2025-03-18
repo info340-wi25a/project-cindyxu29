@@ -71,7 +71,9 @@ export default function PosePage(props) {
     const user = auth.currentUser;
     if (user) {
       const poseRef = firebaseRef(db, 'users/' + user.uid + '/classes/' + selectedClass.uid + '/poses/' + pose.uid);
-      firebaseRemove(poseRef)
+      firebaseRemove(poseRef).then(() => {
+        setPoses((prevPoses) => prevPoses.filter((p) => p.uid !== pose.uid));
+      });
     }
   }
 
