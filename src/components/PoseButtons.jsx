@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { ref, push as firebasePush, update as firebaseUpdate, getDatabase } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
+import poseImage from '../../img/yoga-pose.jpg';
 
 
 export default function PoseButtons(props) {
@@ -111,7 +112,7 @@ export default function PoseButtons(props) {
       {isImageOpen && (
         <div className="overlay" onClick={handleCloseImage}>
           <img
-            src="/img/yoga-pose.jpg"
+            src={poseImage}
             alt="Yoga Poses Guide"
             className="popup-image"
             onClick={(e) => e.stopPropagation()}
