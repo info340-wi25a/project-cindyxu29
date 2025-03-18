@@ -1,3 +1,5 @@
+Note: Users need to exist/go back to "My Classes" after adding poses, then they can come back and delete pose one by one successfully.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
