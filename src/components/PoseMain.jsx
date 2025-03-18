@@ -2,7 +2,7 @@ import React from "react";
 import Timer from './Timer';
 import Button from 'react-bootstrap/Button';
 import PoseButtons from './PoseButtons';
-import {remove} from 'firebase/database';
+import { remove } from 'firebase/database';
 
 function PoseCard(props) {
   const pose = props.pose;
@@ -20,7 +20,7 @@ function PoseCard(props) {
   function handleDelete() {
     handlePoseDelete(pose);
   }
-  
+
   return (
     <div className="d-flex" >
       <div className="pose mb-4" >
@@ -37,9 +37,9 @@ function PoseCard(props) {
             <span className="material-icons icon-btn">
               arrow_downward</span>
           </Button>
-          <Button onClick={handleDelete} className="btn btn-dark">
+          {/* <Button onClick={handleDelete} className="btn btn-dark">
             Delete
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ export default function PoseMain(props) {
   const poseCards = poses.map((pose, index) => {
     return (
       <PoseCard
-      key={pose.uid || index}
+        key={pose.uid || index}
         index={index}
         pose={pose}
         onMovePoseUp={onMovePoseUp}
@@ -79,7 +79,7 @@ export default function PoseMain(props) {
           <p className="instructions">
             Use our yoga poses guide for inspiration and guidance. When the class begins, set the timer to keep your session on track! This tool is here to simplify your preparation, allowing you to focus more on teaching and less on planning. Feel free to update your schedule each week, making adjustments as needed to fit your teaching rhythm and enjoy yoga!
           </p>
-      </div>
+        </div>
       </div >
       <div className="timer-container">
         <Timer />
